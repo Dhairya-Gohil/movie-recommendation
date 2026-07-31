@@ -1,12 +1,12 @@
 import MainLayout from "../layouts/MainLayout";
 
-function Profile() {
+function MovieDetails() {
 
     return (
 
         <MainLayout>
 
-            <h1>Profile</h1>
+            <h1>Coming Soon</h1>
 
         </MainLayout>
 
@@ -14,4 +14,4 @@ function Profile() {
 
 }
 
-export default Profile;
+export default MovieDetails;

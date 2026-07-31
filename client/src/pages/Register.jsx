@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../services/api";
+import MainLayout from "../layouts/MainLayout";
 
 function Register() {
 
@@ -48,50 +49,52 @@ function Register() {
     };
 
     return (
+        <MainLayout>
 
-        <div>
+            <div>
 
-            <h1>Register</h1>
+                <h1>Register</h1>
 
-            <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}>
 
-                <input
-                    type="text"
-                    name="full_name"
-                    placeholder="Full Name"
-                    value={formData.full_name}
-                    onChange={handleChange}
-                />
+                    <input
+                        type="text"
+                        name="full_name"
+                        placeholder="Full Name"
+                        value={formData.full_name}
+                        onChange={handleChange}
+                    />
 
-                <br /><br />
+                    <br /><br />
 
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                />
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        value={formData.email}
+                        onChange={handleChange}
+                    />
 
-                <br /><br />
+                    <br /><br />
 
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    value={formData.password}
-                    onChange={handleChange}
-                />
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        value={formData.password}
+                        onChange={handleChange}
+                    />
 
-                <br /><br />
+                    <br /><br />
 
-                <button type="submit">
-                    Register
-                </button>
+                    <button type="submit">
+                        Register
+                    </button>
 
-            </form>
+                </form>
 
-        </div>
+            </div>
+        </MainLayout>
 
     );
 

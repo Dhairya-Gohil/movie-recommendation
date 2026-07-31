@@ -1,5 +1,7 @@
+import "./NavBar.css";
+
 import { Link } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 
 function Navbar() {
 
@@ -7,39 +9,40 @@ function Navbar() {
 
     return (
 
-        <nav
-            style={{
-                display: "flex",
-                justifyContent: "space-between",
-                padding: "15px 30px",
-                borderBottom: "1px solid #ccc"
-            }}
-        >
+        <nav className="navbar">
 
             <Link to="/">
-                <h2>Movie Recommendation</h2>
+
+                <div className="logo">
+
+                    🎬 MovieAI
+
+                </div>
+
             </Link>
 
-            <div>
+            <div className="nav-right">
 
                 {
+
                     user ? (
 
                         <>
 
                             <span>
+
                                 Welcome, {user.full_name}
+
                             </span>
 
-                            {" "}
-
                             <Link to="/profile">
+
                                 Profile
+
                             </Link>
 
-                            {" "}
-
                             <button
+                                className="logout-btn"
                                 onClick={() => {
 
                                     logout();
@@ -48,7 +51,9 @@ function Navbar() {
 
                                 }}
                             >
+
                                 Logout
+
                             </button>
 
                         </>
@@ -58,18 +63,21 @@ function Navbar() {
                         <>
 
                             <Link to="/login">
+
                                 Login
+
                             </Link>
 
-                            {" | "}
-
                             <Link to="/register">
+
                                 Register
+
                             </Link>
 
                         </>
 
                     )
+
                 }
 
             </div>

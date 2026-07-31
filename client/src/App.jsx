@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Navbar from "./components/navbar";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -11,8 +10,6 @@ function App() {
 
   return (
     <>
-      <Navbar />
-
       <Routes>
 
         <Route path="/" element={<Home />} />

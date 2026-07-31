@@ -1,0 +1,27 @@
+.home-section {
+
+    margin-bottom: 50px;
+
+}
+
+.section-title {
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+    margin-bottom: 25px;
+
+}
+
+.movie-grid {
+
+    display: flex;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+
+    align-items: flex-start;
+
+}

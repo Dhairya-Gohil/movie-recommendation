@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import MainLayout from "../layouts/MainLayout";
 
 import api from "../services/api";
 import { useAuth } from "../context/AuthContext";
@@ -53,40 +54,42 @@ function Login() {
     };
 
     return (
+        <MainLayout>
 
-        <div>
+            <div>
 
-            <h1>Login</h1>
+                <h1>Login</h1>
 
-            <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}>
 
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                />
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        value={formData.email}
+                        onChange={handleChange}
+                    />
 
-                <br /><br />
+                    <br /><br />
 
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    value={formData.password}
-                    onChange={handleChange}
-                />
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        value={formData.password}
+                        onChange={handleChange}
+                    />
 
-                <br /><br />
+                    <br /><br />
 
-                <button type="submit">
-                    Login
-                </button>
+                    <button type="submit">
+                        Login
+                    </button>
 
-            </form>
+                </form>
 
-        </div>
+            </div>
+        </MainLayout>
 
     );
 
