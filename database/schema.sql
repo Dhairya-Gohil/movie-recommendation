@@ -1,0 +1,1 @@
+create table users(user_id int auto_increment primary key, full_name carchar(100) not null, email varchar(100)not null unique, password_hash varchar(255) not null, profile_image varchar(255) default null, role enum('user','admin') not null default 'user', created_at timestamp default current_timestamp, updated_at timestamp default current_timestamp on update current_timestamp);
