@@ -1,0 +1,51 @@
+.main-content {
+    min-height: 85vh;
+
+    width: 100%;
+
+    padding: 30px 40px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+    .main-content {
+        padding: 25px 24px;
+    }
+}
+
+
+/* =========================
+   PHONES
+========================= */
+
+@media (max-width: 600px) {
+    .main-content {
+        padding: 20px 12px;
+    }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 430px) {
+    .main-content {
+        padding: 18px 8px;
+    }
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 360px) {
+    .main-content {
+        padding: 16px 6px;
+    }
+}

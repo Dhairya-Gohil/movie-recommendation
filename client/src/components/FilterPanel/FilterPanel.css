@@ -1,29 +1,326 @@
 .filter-panel {
-
     display: flex;
+    flex-direction: column;
 
     gap: 15px;
 
     margin-bottom: 35px;
 
-    flex-wrap: wrap;
+    padding: 16px;
 
+    background: var(--surface);
+
+    border: 1px solid var(--border-light);
+
+    border-radius: var(--radius);
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.05);
 }
 
-.filter-panel select {
 
-    width: 160px;
+/* =========================
+   FILTER PANEL HEADER
+========================= */
 
-    height: 45px;
+.filter-panel-header {
+    display: flex;
+    align-items: center;
+}
+
+.filter-panel-title {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.filter-panel-title-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: var(--primary-light);
+
+    border: 1px solid #ffd9dc;
+
+    border-radius: 9px;
+
+    color: var(--primary);
+}
+
+.filter-panel-title-icon svg {
+    display: block;
+}
+
+.filter-panel-title h3 {
+    margin: 0 0 2px;
+
+    color: var(--text);
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.filter-panel-title span {
+    display: block;
+
+    color: var(--text-secondary);
+
+    font-size: 11px;
+    line-height: 1.3;
+}
+
+
+/* =========================
+   FILTER CONTROLS
+========================= */
+
+.filter-controls {
+    display: flex;
+    align-items: flex-end;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.filter-control {
+    flex: 1;
+
+    min-width: 145px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+
+/* =========================
+   FILTER LABEL
+========================= */
+
+.filter-label {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    padding-left: 2px;
+
+    color: var(--text-secondary);
+
+    font-size: 11px;
+    font-weight: 650;
+}
+
+.filter-label svg {
+    color: #888888;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   FILTER SELECT
+========================= */
+
+.filter-control select {
+    width: 100%;
+    height: 44px;
+
+    padding: 0 34px 0 13px;
+
+    background: #ffffff;
 
     border: 1px solid var(--border);
 
-    border-radius: 10px;
+    border-radius: var(--radius-small);
 
-    background: white;
+    color: var(--text);
 
-    padding: 0 12px;
+    font-family: inherit;
 
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: 500;
 
+    cursor: pointer;
+
+    outline: none;
+
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition),
+        background var(--transition),
+        transform var(--transition);
+}
+
+.filter-control select:hover {
+    border-color: #bbbbbb;
+
+    background: var(--surface-hover);
+}
+
+.filter-control select:focus {
+    border-color: #cfcfcf;
+
+    box-shadow:
+        0 0 0 3px rgba(0, 0, 0, 0.035);
+
+    background: #ffffff;
+}
+
+.filter-control select:active {
+    transform: translateY(1px);
+}
+
+
+/* =========================
+   LOADING STATE
+========================= */
+
+.filter-panel-loading {
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: row;
+
+    gap: 8px;
+
+    color: var(--text-secondary);
+}
+
+.filter-panel-loading svg {
+    color: var(--primary);
+}
+
+.filter-panel-loading p {
+    margin: 0;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .filter-panel {
+        gap: 14px;
+
+        padding: 14px;
+    }
+
+    .filter-controls {
+        gap: 10px;
+    }
+
+    .filter-control {
+        flex: 1;
+
+        min-width: 145px;
+    }
+
+    .filter-control select {
+        height: 44px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .filter-panel {
+        gap: 13px;
+
+        padding: 11px;
+
+        margin-bottom: 28px;
+    }
+
+    .filter-panel-title-icon {
+        width: 31px;
+        height: 31px;
+    }
+
+    .filter-panel-title h3 {
+        font-size: 13px;
+    }
+
+    .filter-panel-title span {
+        font-size: 10px;
+    }
+
+    .filter-controls {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 9px;
+    }
+
+    .filter-control {
+        width: 100%;
+        min-width: 0;
+
+        gap: 5px;
+    }
+
+    .filter-label {
+        font-size: 10px;
+    }
+
+    .filter-control select {
+        width: 100%;
+        min-width: 0;
+
+        height: 42px;
+
+        padding: 0 10px;
+
+        font-size: 13px;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+
+    .filter-panel {
+        gap: 11px;
+
+        padding: 9px;
+    }
+
+    .filter-controls {
+        gap: 7px;
+    }
+
+    .filter-label {
+        font-size: 9px;
+    }
+
+    .filter-control select {
+        height: 40px;
+
+        font-size: 12px;
+    }
 }

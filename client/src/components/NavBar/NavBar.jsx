@@ -2,6 +2,7 @@ import "./NavBar.css";
 
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import { Heart, Bookmark } from "lucide-react";
 
 function Navbar() {
 
@@ -38,6 +39,18 @@ function Navbar() {
                             <Link to="/profile">
 
                                 Profile
+
+                            </Link>
+
+                            <Link to="/favorites">
+
+                                <Heart size={16} strokeWidth={2.5} /> Favorites
+
+                            </Link>
+
+                            <Link to="/watchlist">
+
+                                <Bookmark size={16} strokeWidth={2.5} /> Watchlist
 
                             </Link>
 

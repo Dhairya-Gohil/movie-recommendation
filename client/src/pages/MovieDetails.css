@@ -1,0 +1,1128 @@
+/* =========================
+   MOVIE DETAILS PAGE
+========================= */
+
+.movie-details-page {
+    min-height: calc(100vh - 80px);
+
+    padding: 40px 0;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.movie-details-container {
+    display: flex;
+    gap: 40px;
+
+    width: 100%;
+
+    padding: 32px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: var(--radius);
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.10);
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* =========================
+   POSTER
+========================= */
+
+.movie-details-poster {
+    width: 280px;
+    height: 410px;
+
+    flex-shrink: 0;
+
+    object-fit: cover;
+
+    background: #ffffff;
+
+    border-radius: var(--radius);
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.14);
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.movie-details-content {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.movie-details-title {
+    margin: 0 0 10px;
+
+    color: var(--text);
+
+    font-size: 38px;
+    font-weight: 750;
+    line-height: 1.15;
+
+    letter-spacing: -0.7px;
+}
+
+.movie-details-tagline {
+    margin: 0 0 20px;
+
+    color: var(--text-secondary);
+
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.movie-details-rating {
+    display: flex;
+    align-items: center;
+
+    margin: 0 0 14px;
+
+    color: #d99600;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.movie-details-meta {
+    margin: 0 0 25px;
+
+    color: var(--text-secondary);
+
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.movie-details-description {
+    max-width: 900px;
+
+    margin: 0 0 28px;
+
+    color: #333333;
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   FAVORITES / WATCHLIST
+========================= */
+
+.movie-details-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-bottom: 32px;
+}
+
+.movie-action-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 44px;
+
+    padding: 10px 18px;
+
+    border: 1px solid #dddddd;
+    border-radius: 9px;
+
+    background: #ffffff;
+    color: #333333;
+
+    font-size: 14px;
+    font-weight: 650;
+
+    box-shadow:
+        0 2px 7px rgba(0, 0, 0, 0.04);
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.movie-action-button:hover:not(:disabled) {
+    background: #fafafa;
+
+    border-color: #bbbbbb;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* FAVORITE BUTTON ACTIVE */
+.movie-action-button.favorite-btn.active {
+    background: #fff0f0;
+    border-color: #ffcccc;
+    color: #e50914;
+
+    box-shadow:
+        0 4px 12px rgba(229, 9, 20, 0.12);
+}
+
+.movie-action-button.favorite-btn.active:hover:not(:disabled) {
+    background: #ffe5e5;
+    border-color: #ffb3b3;
+
+    box-shadow:
+        0 6px 15px rgba(229, 9, 20, 0.16);
+}
+
+/* WATCHLIST BUTTON ACTIVE */
+.movie-action-button.watchlist-btn.active {
+    background: #f0f7ff;
+    border-color: #cce5ff;
+    color: #0066cc;
+
+    box-shadow:
+        0 4px 12px rgba(0, 102, 204, 0.12);
+}
+
+.movie-action-button.watchlist-btn.active:hover:not(:disabled) {
+    background: #e5f0ff;
+    border-color: #b3d7ff;
+
+    box-shadow:
+        0 6px 15px rgba(0, 102, 204, 0.16);
+}
+
+.movie-action-button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================
+   MOVIE INFORMATION SECTIONS
+========================= */
+
+.movie-details-section {
+    margin-bottom: 28px;
+}
+
+.movie-details-section h3 {
+    margin: 0 0 12px;
+
+    color: var(--text);
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.movie-details-section>p {
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   GENRES / LANGUAGES
+========================= */
+
+.movie-details-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.movie-details-item {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 32px;
+
+    padding: 6px 12px;
+
+    background: #fff4f4;
+
+    border: 1px solid #ffebeb;
+    border-radius: 20px;
+
+    color: var(--primary);
+
+    font-size: 13px;
+    font-weight: 650;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.movie-details-item:hover {
+    background: #ffe5e5;
+
+    border-color: #ffd6d6;
+    color: var(--primary-hover);
+}
+
+
+/* =========================
+   TRAILERS
+========================= */
+
+.movie-details-trailer {
+    display: inline-flex;
+    align-items: center;
+
+    margin-top: 5px;
+    padding: 9px 13px;
+
+    background: #fff5f5;
+
+    border: 1px solid #ffd7d7;
+    border-radius: 8px;
+
+    color: var(--primary);
+
+    font-size: 14px;
+    font-weight: 650;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.movie-details-trailer:hover {
+    background: #ffeaea;
+
+    border-color: #ffbcbc;
+
+    color: var(--primary-hover);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   REVIEWS SECTION
+========================= */
+
+.reviews-section {
+    margin-top: 45px;
+    padding-top: 30px;
+
+    border-top: 1px solid #e2e2e2;
+}
+
+.reviews-section h3 {
+    margin: 0 0 22px;
+
+    color: var(--text);
+
+    font-size: 26px;
+    font-weight: 750;
+}
+
+
+/* =========================
+   REVIEW FORM
+========================= */
+
+.review-form {
+    margin-bottom: 35px;
+
+    padding: 20px;
+
+    background: #fafafa;
+
+    border: 1px solid #e2e2e2;
+    border-radius: 12px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.review-input {
+    display: block;
+
+    width: 100%;
+    min-height: 120px;
+
+    padding: 14px 16px;
+
+    background: #ffffff;
+    color: #222222;
+
+    border: 1px solid #d4d4d4;
+    border-radius: 9px;
+
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.6;
+
+    resize: vertical;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.review-input::placeholder {
+    color: #999999;
+}
+
+.review-input:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(229, 9, 20, 0.08);
+}
+
+.review-submit-button {
+    margin-top: 12px;
+
+    min-height: 42px;
+
+    padding: 10px 20px;
+
+    background: var(--primary);
+    color: #ffffff;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 650;
+
+    box-shadow:
+        0 4px 10px rgba(229, 9, 20, 0.12);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.review-submit-button:hover:not(:disabled) {
+    background: var(--primary-hover);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 14px rgba(229, 9, 20, 0.18);
+}
+
+.review-submit-button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================
+   REVIEW LOGIN MESSAGE
+========================= */
+
+.review-login-message {
+    margin: 0 0 25px;
+
+    padding: 14px 17px;
+
+    background: #f8f8f8;
+
+    border: 1px solid #e2e2e2;
+    border-radius: 9px;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   REVIEW ERRORS / EMPTY
+========================= */
+
+.review-error {
+    margin-top: 10px;
+
+    color: #d00000;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.review-empty {
+    padding: 25px;
+
+    background: #fafafa;
+
+    border: 1px dashed #d5d5d5;
+    border-radius: 10px;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   REVIEWS LIST
+========================= */
+
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+
+/* =========================
+   REVIEW CARD
+========================= */
+
+.review-card {
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e2e2;
+    border-radius: 12px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.05);
+
+    transition:
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.review-card:hover {
+    border-color: #d5d5d5;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================
+   REVIEW HEADER
+========================= */
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 14px;
+}
+
+.review-header>div:first-child {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    min-width: 0;
+}
+
+.review-header strong {
+    color: #222222;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.review-header span {
+    color: #888888;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   REVIEW ACTIONS
+========================= */
+
+.review-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+}
+
+.review-actions button {
+    min-height: 31px;
+
+    padding: 5px 11px;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.review-edit-button {
+    background: #ffffff;
+    color: #444444;
+
+    border: 1px solid #d6d6d6;
+}
+
+.review-edit-button:hover:not(:disabled) {
+    background: #f3f3f3;
+
+    border-color: #bbbbbb;
+}
+
+.review-delete-button {
+    background: #fff5f5;
+    color: #d00000;
+
+    border: 1px solid #f0caca;
+}
+
+.review-delete-button:hover:not(:disabled) {
+    background: #ffe5e5;
+
+    border-color: #e0aaaa;
+}
+
+.review-actions button:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================
+   REVIEW TEXT
+========================= */
+
+.review-text {
+    margin: 0;
+
+    color: #333333;
+
+    font-size: 15px;
+    line-height: 1.7;
+
+    white-space: pre-wrap;
+}
+
+
+/* =========================
+   SENTIMENT
+========================= */
+
+.review-sentiment {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 14px;
+
+    padding: 7px 14px;
+
+    border: 1px solid #e2e2e2;
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 650;
+}
+
+.review-sentiment span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.sentiment-positive {
+    background: #f1fbf3;
+
+    border-color: #ccebd2;
+
+    color: #237a35;
+}
+
+.sentiment-negative {
+    background: #fff4f4;
+
+    border-color: #f1cccc;
+
+    color: #b52b2b;
+}
+
+.sentiment-neutral {
+    background: #f5f5f5;
+
+    border-color: #dddddd;
+
+    color: #666666;
+}
+
+
+/* =========================
+   EDIT REVIEW
+========================= */
+
+.review-edit-form {
+    margin-top: 5px;
+}
+
+.review-edit-form .review-input {
+    min-height: 110px;
+}
+
+.review-edit-actions {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 12px;
+}
+
+.review-save-button,
+.review-cancel-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 40px;
+
+    padding: 9px 18px;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.review-save-button {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.review-save-button:hover:not(:disabled) {
+    background: var(--primary-hover);
+
+    transform: translateY(-1px);
+}
+
+.review-cancel-button {
+    background: #ffffff;
+    color: #444444;
+
+    border: 1px solid #d4d4d4;
+}
+
+.review-cancel-button:hover:not(:disabled) {
+    background: #f4f4f4;
+
+    border-color: #bbbbbb;
+}
+
+.review-save-button:disabled,
+.review-cancel-button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+    .movie-details-page {
+        padding: 25px 0;
+    }
+
+    .movie-details-container {
+        gap: 28px;
+
+        padding: 25px;
+    }
+
+    .movie-details-poster {
+        width: 230px;
+        height: 340px;
+    }
+
+    .movie-details-title {
+        font-size: 32px;
+    }
+
+    .movie-details-tagline {
+        font-size: 16px;
+    }
+
+    .movie-details-description {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+}
+
+
+/* =========================
+   PHONE
+========================= */
+
+@media (max-width: 600px) {
+    .movie-details-page {
+        min-height: auto;
+
+        padding: 15px 0;
+    }
+
+    .movie-details-container {
+        flex-direction: column;
+
+        gap: 22px;
+
+        padding: 16px;
+
+        border-radius: 10px;
+    }
+
+    .movie-details-poster {
+        width: min(220px, 75vw);
+        height: auto;
+
+        aspect-ratio: 2 / 3;
+
+        align-self: center;
+
+        border-radius: 9px;
+    }
+
+    .movie-details-title {
+        margin-bottom: 8px;
+
+        font-size: 27px;
+        line-height: 1.2;
+
+        letter-spacing: -0.4px;
+    }
+
+    .movie-details-tagline {
+        margin-bottom: 14px;
+
+        font-size: 15px;
+    }
+
+    .movie-details-rating {
+        margin-bottom: 10px;
+
+        font-size: 18px;
+    }
+
+    .movie-details-meta {
+        margin-bottom: 18px;
+
+        font-size: 13px;
+    }
+
+    .movie-details-description {
+        margin-bottom: 20px;
+
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .movie-details-actions {
+        flex-direction: column;
+
+        gap: 9px;
+
+        margin-bottom: 25px;
+    }
+
+    .movie-action-button {
+        width: 100%;
+
+        min-height: 43px;
+
+        padding: 9px 12px;
+
+        font-size: 13px;
+    }
+
+    .movie-details-section {
+        margin-bottom: 22px;
+    }
+
+    .movie-details-section h3 {
+        margin-bottom: 9px;
+
+        font-size: 18px;
+    }
+
+    .movie-details-item {
+        min-height: 30px;
+
+        padding: 5px 10px;
+
+        font-size: 12px;
+    }
+
+    .movie-details-trailer {
+        font-size: 13px;
+    }
+
+    .reviews-section {
+        margin-top: 30px;
+
+        padding-top: 22px;
+    }
+
+    .reviews-section h3 {
+        margin-bottom: 17px;
+
+        font-size: 22px;
+    }
+
+    .review-form {
+        margin-bottom: 25px;
+
+        padding: 13px;
+    }
+
+    .review-input {
+        min-height: 110px;
+
+        padding: 12px;
+
+        font-size: 14px;
+    }
+
+    .review-submit-button {
+        width: 100%;
+
+        margin-top: 10px;
+    }
+
+    .review-login-message {
+        margin-bottom: 20px;
+
+        padding: 12px 14px;
+
+        font-size: 13px;
+    }
+
+    .review-card {
+        padding: 15px;
+
+        border-radius: 10px;
+    }
+
+    .review-header {
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+    .review-header>div:first-child {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 2px;
+    }
+
+    .review-header strong {
+        font-size: 14px;
+    }
+
+    .review-header span {
+        font-size: 12px;
+    }
+
+    .review-actions {
+        gap: 5px;
+    }
+
+    .review-actions button {
+        min-height: 29px;
+
+        padding: 5px 8px;
+
+        font-size: 12px;
+    }
+
+    .review-text {
+        font-size: 14px;
+
+        line-height: 1.65;
+    }
+
+    .review-sentiment {
+        max-width: 100%;
+
+        flex-wrap: wrap;
+
+        gap: 6px;
+
+        margin-top: 12px;
+
+        font-size: 11px;
+    }
+
+    .review-edit-actions {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+    .review-save-button,
+    .review-cancel-button {
+        width: 100%;
+    }
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 430px) {
+    .movie-details-page {
+        padding: 10px 0;
+    }
+
+    .movie-details-container {
+        gap: 18px;
+
+        padding: 12px;
+
+        border-radius: 8px;
+    }
+
+    .movie-details-poster {
+        width: min(190px, 70vw);
+    }
+
+    .movie-details-title {
+        font-size: 23px;
+    }
+
+    .movie-details-tagline {
+        font-size: 14px;
+    }
+
+    .movie-details-rating {
+        font-size: 17px;
+    }
+
+    .movie-details-meta {
+        font-size: 12px;
+    }
+
+    .movie-details-description {
+        font-size: 13px;
+    }
+
+    .movie-action-button {
+        font-size: 12px;
+    }
+
+    .movie-details-section h3 {
+        font-size: 17px;
+    }
+
+    .reviews-section h3 {
+        font-size: 21px;
+    }
+
+    .review-card {
+        padding: 13px;
+    }
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 360px) {
+    .movie-details-container {
+        padding: 10px;
+    }
+
+    .movie-details-poster {
+        width: min(175px, 68vw);
+    }
+
+    .movie-details-title {
+        font-size: 21px;
+    }
+
+    .movie-details-description {
+        font-size: 12.5px;
+    }
+
+    .movie-details-item {
+        font-size: 11px;
+    }
+
+    .review-card {
+        padding: 11px;
+    }
+
+    .review-header {
+        flex-direction: column;
+    }
+
+    .review-actions {
+        width: 100%;
+    }
+
+    .review-actions button {
+        flex: 1;
+    }
+}

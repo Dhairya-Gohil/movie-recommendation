@@ -3,7 +3,7 @@ const pool = require("../config/db");
 async function findUserByEmail(email) {
 
     const [rows] = await pool.execute(
-        "SELECT * FROM users WHERE email = ?",
+        "select * from users where email = ?",
         [email]
     );
 
@@ -13,7 +13,7 @@ async function findUserByEmail(email) {
 async function findUserById(user_id) {
 
     const [rows] = await pool.execute(
-        "SELECT * FROM users WHERE user_id = ?",
+        "select * from users where user_id = ?",
         [user_id]
     );
 
@@ -28,9 +28,9 @@ async function createUser(user) {
 
     const [result] = await pool.execute(
 
-        `INSERT INTO users
-        (full_name,email,password_hash)
-        VALUES (?,?,?)`,
+        `insert into users
+        (full_name, email, password_hash)
+        values (?, ?, ?)`,
 
         [full_name, email, password_hash]
 
@@ -39,10 +39,22 @@ async function createUser(user) {
     return result.insertId;
 }
 
+async function updateUserPassword(user_id, password_hash) {
+
+    await pool.execute(
+        `update users
+        set password_hash = ?
+        where user_id = ?`,
+        [password_hash, user_id]
+    );
+
+}
+
 module.exports = {
 
     findUserByEmail,
     findUserById,
-    createUser
+    createUser,
+    updateUserPassword
 
 };

@@ -1,27 +1,177 @@
 .home-section {
-
-    margin-bottom: 50px;
-
+    width: 100%;
+    margin-bottom: 42px;
 }
+
+.home-section:first-child {
+    padding-top: 10px;
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
 
 .section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 
-    font-size: 32px;
+    margin-bottom: 24px;
 
-    font-weight: 700;
+    color: var(--text);
 
-    margin-bottom: 25px;
-
+    font-size: 30px;
+    font-weight: 750;
+    letter-spacing: -0.5px;
 }
 
+.section-title::after {
+    content: "";
+
+    width: 45px;
+    height: 4px;
+
+    margin-top: 5px;
+
+    background: var(--primary);
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   MOVIE GRID
+========================= */
+
 .movie-grid {
+    display: grid;
 
-    display: flex;
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
 
-    gap: 25px;
+    width: 100%;
 
-    flex-wrap: wrap;
+    gap: 28px 24px;
 
-    align-items: flex-start;
+    align-items: start;
+}
 
+
+/*
+   The Link is the actual grid item.
+   Make it fill its grid column.
+*/
+
+.movie-grid>a {
+    display: block;
+
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* =========================
+   TABLET
+   4 CARDS
+========================= */
+
+@media (max-width: 1100px) {
+    .movie-grid {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+
+        gap: 24px 18px;
+    }
+}
+
+
+/* =========================
+   SMALL TABLET
+   3 CARDS
+========================= */
+
+@media (max-width: 900px) {
+    .section-title {
+        font-size: 27px;
+    }
+
+    .movie-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 22px 14px;
+    }
+}
+
+
+/* =========================
+   ALL PHONES
+   2 CARDS
+========================= */
+
+@media (max-width: 600px) {
+    .home-section {
+        margin-bottom: 30px;
+    }
+
+    .home-section:first-child {
+        padding-top: 4px;
+    }
+
+    .section-title {
+        font-size: 22px;
+
+        margin-bottom: 18px;
+    }
+
+    .section-title::after {
+        width: 30px;
+        height: 3px;
+    }
+
+    .movie-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 16px 8px;
+    }
+}
+
+
+/* =========================
+   SMALL PHONES
+   2 CARDS
+========================= */
+
+@media (max-width: 430px) {
+    .movie-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 14px 6px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+   2 CARDS
+========================= */
+
+@media (max-width: 360px) {
+    .movie-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 12px 4px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
 }

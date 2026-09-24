@@ -1,0 +1,12 @@
+{
+    "name": "movie-recommendation",
+    "version": "1.0.0",
+    "scripts": {
+        "ai": "cd ai-service && venv\\Scripts\\python -m uvicorn main:app --reload",
+        "dev": "npx --yes concurrently \"npm --prefix client run dev\" \"npm --prefix server run dev\" \"npm run ai\"",
+        "sync": "npm --prefix server run sync"
+    },
+    "dependencies": {
+        "lucide-react": "^1.46.0"
+    }
+}
