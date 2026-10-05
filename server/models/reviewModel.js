@@ -4,24 +4,27 @@ async function addReview(
     user_id,
     movie_id,
     review_text,
+    rating,
     sentiment,
     sentiment_score
 ) {
     const [result] = await pool.execute(
         `
-        insert into reviews(
-    user_id,
-    movie_id,
-    review_text,
-    sentiment,
-    sentiment_score
-)
-values(?, ?, ?, ?, ?)
-    `,
+        INSERT INTO reviews(
+            user_id,
+            movie_id,
+            review_text,
+            rating,
+            sentiment,
+            sentiment_score
+        )
+        VALUES (?, ?, ?, ?, ?, ?)
+        `,
         [
             user_id,
             movie_id,
             review_text,
+            rating,
             sentiment,
             sentiment_score
         ]
@@ -33,21 +36,22 @@ values(?, ?, ?, ?, ?)
 async function getReviewsByMovie(movie_id) {
     const [rows] = await pool.execute(
         `
-select
-r.review_id,
-    r.user_id,
-    r.movie_id,
-    r.review_text,
-    r.sentiment,
-    r.sentiment_score,
-    r.created_at,
-    r.updated_at,
-    u.full_name
-        from reviews r
-        inner join users u
-            on r.user_id = u.user_id
-        where r.movie_id = ?
-    order by r.created_at desc
+        SELECT
+            r.review_id,
+            r.user_id,
+            r.movie_id,
+            r.review_text,
+            r.rating,
+            r.sentiment,
+            r.sentiment_score,
+            r.created_at,
+            r.updated_at,
+            u.full_name
+        FROM reviews r
+        INNER JOIN users u
+            ON r.user_id = u.user_id
+        WHERE r.movie_id = ?
+        ORDER BY r.created_at DESC
         `,
         [movie_id]
     );
@@ -58,18 +62,19 @@ r.review_id,
 async function getReviewById(review_id) {
     const [rows] = await pool.execute(
         `
-select
-review_id,
-    user_id,
-    movie_id,
-    review_text,
-    sentiment,
-    sentiment_score,
-    created_at,
-    updated_at
-        from reviews
-        where review_id = ?
-    `,
+        SELECT
+            review_id,
+            user_id,
+            movie_id,
+            review_text,
+            rating,
+            sentiment,
+            sentiment_score,
+            created_at,
+            updated_at
+        FROM reviews
+        WHERE review_id = ?
+        `,
         [review_id]
     );
 
@@ -80,20 +85,24 @@ async function updateReview(
     review_id,
     user_id,
     review_text,
+    rating,
     sentiment,
     sentiment_score
 ) {
     const [result] = await pool.execute(
         `
-        update reviews
-set
-review_text = ?,
-    sentiment = ?,
-    sentiment_score = ?
-        where review_id = ? and user_id = ?
-            `,
+        UPDATE reviews
+        SET
+            review_text = ?,
+            rating = ?,
+            sentiment = ?,
+            sentiment_score = ?
+        WHERE review_id = ?
+          AND user_id = ?
+        `,
         [
             review_text,
+            rating,
             sentiment,
             sentiment_score,
             review_id,
@@ -107,9 +116,10 @@ review_text = ?,
 async function deleteReview(review_id, user_id) {
     const [result] = await pool.execute(
         `
-        delete from reviews
-        where review_id = ? and user_id = ?
-    `,
+        DELETE FROM reviews
+        WHERE review_id = ?
+          AND user_id = ?
+        `,
         [review_id, user_id]
     );
 

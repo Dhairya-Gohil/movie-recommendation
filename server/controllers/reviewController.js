@@ -38,15 +38,43 @@ async function analyzeSentiment(review_text) {
     }
 }
 
+function validateRating(rating) {
+    const numericRating = Number(rating);
+
+    if (
+        !Number.isFinite(numericRating) ||
+        numericRating < 1 ||
+        numericRating > 5
+    ) {
+        return null;
+    }
+
+    // Allow only 0.5 increments.
+    if ((numericRating * 2) % 1 !== 0) {
+        return null;
+    }
+
+    return numericRating;
+}
+
 async function addReview(req, res) {
     try {
         const user_id = req.user.user_id;
-        const { movie_id, review_text } = req.body;
 
-        if (!movie_id || !review_text || !review_text.trim()) {
+        const { movie_id, review_text, rating } = req.body;
+
+        if (!movie_id || !review_text || !review_text.trim() || rating === undefined) {
             return res.status(400).json({
                 success: false,
-                message: "Movie ID and review text are required."
+                message: "Movie ID, review text, and rating are required."
+            });
+        }
+
+        const ratingVal = Number(rating);
+        if (isNaN(ratingVal) || ratingVal < 0 || ratingVal > 5) {
+            return res.status(400).json({
+                success: false,
+                message: "Rating must be a number between 0 and 5."
             });
         }
 
@@ -60,6 +88,7 @@ async function addReview(req, res) {
             user_id,
             movie_id,
             cleanedReviewText,
+            ratingVal,
             sentimentResult.sentiment,
             sentimentResult.sentiment_score
         );
@@ -68,6 +97,7 @@ async function addReview(req, res) {
             success: true,
             message: "Review added successfully.",
             review_id: result.insertId,
+            rating: ratingVal,
             sentiment: sentimentResult.sentiment,
             sentiment_score: sentimentResult.sentiment_score
         });
@@ -106,12 +136,21 @@ async function updateReview(req, res) {
     try {
         const user_id = req.user.user_id;
         const { reviewId } = req.params;
-        const { review_text } = req.body;
 
-        if (!review_text || !review_text.trim()) {
+        const { review_text, rating } = req.body;
+
+        if (!review_text || !review_text.trim() || rating === undefined) {
             return res.status(400).json({
                 success: false,
-                message: "Review text is required."
+                message: "Review text and rating are required."
+            });
+        }
+
+        const ratingVal = Number(rating);
+        if (isNaN(ratingVal) || ratingVal < 0 || ratingVal > 5) {
+            return res.status(400).json({
+                success: false,
+                message: "Rating must be a number between 0 and 5."
             });
         }
 
@@ -125,6 +164,7 @@ async function updateReview(req, res) {
             reviewId,
             user_id,
             cleanedReviewText,
+            ratingVal,
             sentimentResult.sentiment,
             sentimentResult.sentiment_score
         );
@@ -132,13 +172,15 @@ async function updateReview(req, res) {
         if (result.affectedRows === 0) {
             return res.status(404).json({
                 success: false,
-                message: "Review not found or you are not allowed to edit it."
+                message:
+                    "Review not found or you are not allowed to edit it."
             });
         }
 
         res.json({
             success: true,
             message: "Review updated successfully.",
+            rating: ratingVal,
             sentiment: sentimentResult.sentiment,
             sentiment_score: sentimentResult.sentiment_score
         });
@@ -165,7 +207,8 @@ async function deleteReview(req, res) {
         if (result.affectedRows === 0) {
             return res.status(404).json({
                 success: false,
-                message: "Review not found or you are not allowed to delete it."
+                message:
+                    "Review not found or you are not allowed to delete it."
             });
         }
 

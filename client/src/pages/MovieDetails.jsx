@@ -13,7 +13,9 @@ import {
     Meh,
     Bot,
     UserRound,
-    Sparkles
+    Sparkles,
+    Star,
+    StarHalf
 } from "lucide-react";
 
 import MainLayout from "../layouts/MainLayout";
@@ -36,11 +38,13 @@ function MovieDetails() {
     const [reviews, setReviews] = useState([]);
     const [reviewsLoading, setReviewsLoading] = useState(true);
     const [reviewText, setReviewText] = useState("");
+    const [reviewRating, setReviewRating] = useState(0);
     const [reviewSubmitting, setReviewSubmitting] = useState(false);
     const [reviewError, setReviewError] = useState("");
 
     const [editingReviewId, setEditingReviewId] = useState(null);
     const [editingReviewText, setEditingReviewText] = useState("");
+    const [editingReviewRating, setEditingReviewRating] = useState(0);
     const [reviewActionLoading, setReviewActionLoading] = useState(false);
 
     const [recommendations, setRecommendations] = useState([]);
@@ -330,7 +334,8 @@ function MovieDetails() {
                     },
                     body: JSON.stringify({
                         movie_id: Number(id),
-                        review_text: reviewText.trim()
+                        review_text: reviewText.trim(),
+                        rating: reviewRating
                     })
                 }
             );
@@ -371,12 +376,14 @@ function MovieDetails() {
     function handleEditReview(review) {
         setEditingReviewId(review.review_id);
         setEditingReviewText(review.review_text);
+        setEditingReviewRating(review.rating || 0);
         setReviewError("");
     }
 
     function handleCancelEdit() {
         setEditingReviewId(null);
         setEditingReviewText("");
+        setEditingReviewRating(0);
     }
 
     async function handleUpdateReview(reviewId) {
@@ -407,8 +414,8 @@ function MovieDetails() {
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
-                        review_text:
-                            editingReviewText.trim()
+                        review_text: editingReviewText.trim(),
+                        rating: editingReviewRating
                     })
                 }
             );
@@ -934,6 +941,31 @@ function MovieDetails() {
                                         className="review-form"
                                         onSubmit={handleReviewSubmit}
                                     >
+                                        <div style={{ display: 'flex', gap: '4px', marginBottom: '12px' }}>
+                                            {[1, 2, 3, 4, 5].map((star) => (
+                                                <div key={star} style={{ position: 'relative', display: 'inline-block' }}>
+                                                    <button
+                                                        type="button"
+                                                        title={`${star - 0.5} stars`}
+                                                        onClick={() => setReviewRating(star - 0.5)}
+                                                        style={{ position: 'absolute', width: '50%', height: '100%', left: 0, zIndex: 2, background: 'transparent', border: 'none', cursor: 'pointer' }}
+                                                    />
+                                                    <button
+                                                        type="button"
+                                                        title={`${star} stars`}
+                                                        onClick={() => setReviewRating(star)}
+                                                        style={{ position: 'absolute', width: '50%', height: '100%', right: 0, zIndex: 2, background: 'transparent', border: 'none', cursor: 'pointer' }}
+                                                    />
+                                                    {reviewRating >= star ? (
+                                                        <Star size={24} color="#FFD700" fill="#FFD700" />
+                                                    ) : reviewRating >= star - 0.5 ? (
+                                                        <StarHalf size={24} color="#FFD700" fill="#FFD700" />
+                                                    ) : (
+                                                        <Star size={24} color="#ccc" />
+                                                    )}
+                                                </div>
+                                            ))}
+                                        </div>
                                         <textarea
                                             className="review-input"
                                             value={reviewText}
@@ -1083,6 +1115,31 @@ function MovieDetails() {
                                                     {editingReviewId ===
                                                         review.review_id ? (
                                                         <div className="review-edit-form">
+                                                            <div style={{ display: 'flex', gap: '4px', marginBottom: '12px' }}>
+                                                                {[1, 2, 3, 4, 5].map((star) => (
+                                                                    <div key={star} style={{ position: 'relative', display: 'inline-block' }}>
+                                                                        <button
+                                                                            type="button"
+                                                                            title={`${star - 0.5} stars`}
+                                                                            onClick={() => setEditingReviewRating(star - 0.5)}
+                                                                            style={{ position: 'absolute', width: '50%', height: '100%', left: 0, zIndex: 2, background: 'transparent', border: 'none', cursor: 'pointer' }}
+                                                                        />
+                                                                        <button
+                                                                            type="button"
+                                                                            title={`${star} stars`}
+                                                                            onClick={() => setEditingReviewRating(star)}
+                                                                            style={{ position: 'absolute', width: '50%', height: '100%', right: 0, zIndex: 2, background: 'transparent', border: 'none', cursor: 'pointer' }}
+                                                                        />
+                                                                        {editingReviewRating >= star ? (
+                                                                            <Star size={20} color="#FFD700" fill="#FFD700" />
+                                                                        ) : editingReviewRating >= star - 0.5 ? (
+                                                                            <StarHalf size={20} color="#FFD700" fill="#FFD700" />
+                                                                        ) : (
+                                                                            <Star size={20} color="#ccc" />
+                                                                        )}
+                                                                    </div>
+                                                                ))}
+                                                            </div>
                                                             <textarea
                                                                 className="review-input"
                                                                 value={
@@ -1148,6 +1205,19 @@ function MovieDetails() {
                                                         </div>
                                                     ) : (
                                                         <>
+                                                            <div style={{ display: 'flex', gap: '2px', marginBottom: '8px', marginTop: '6px' }}>
+                                                                {[1, 2, 3, 4, 5].map((star) => (
+                                                                    <span key={star}>
+                                                                        {(review.rating || 0) >= star ? (
+                                                                            <Star size={16} color="#FFD700" fill="#FFD700" />
+                                                                        ) : (review.rating || 0) >= star - 0.5 ? (
+                                                                            <StarHalf size={16} color="#FFD700" fill="#FFD700" />
+                                                                        ) : (
+                                                                            <Star size={16} color="#e0e0e0" />
+                                                                        )}
+                                                                    </span>
+                                                                ))}
+                                                            </div>
                                                             <p className="review-text">
                                                                 {
                                                                     review.review_text
@@ -1258,7 +1328,7 @@ function MovieDetails() {
 
                 </div>
             </div>
-        </MainLayout>
+        </MainLayout >
     );
 }
 
