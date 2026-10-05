@@ -80,7 +80,7 @@ function Login() {
                     </h1>
 
                     <p className="login-subtitle">
-                        Login to continue to MovieAI
+                        Login to continue to MovieFlick
                     </p>
 
                 </div>

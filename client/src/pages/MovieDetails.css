@@ -19,8 +19,14 @@
 
 .movie-details-container {
     display: flex;
-    gap: 40px;
+    flex-direction: column;
 
+    width: 100%;
+}
+
+.movie-details-top {
+    display: flex;
+    gap: 40px;
     width: 100%;
 
     padding: 32px;
@@ -286,6 +292,123 @@
 
     border-color: #ffd6d6;
     color: var(--primary-hover);
+}
+
+
+/* =========================
+   CAST
+========================= */
+
+.cast-section {
+    margin-top: 4px;
+}
+
+.cast-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(145px, 1fr));
+
+    gap: 16px;
+}
+
+.cast-card {
+    min-width: 0;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e4e4e4;
+    border-radius: 12px;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.cast-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #d5d5d5;
+
+    box-shadow:
+        0 7px 16px rgba(0, 0, 0, 0.08);
+}
+
+.cast-image-wrapper {
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    overflow: hidden;
+
+    background: #f5f5f5;
+}
+
+.cast-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: top;
+}
+
+.cast-image-fallback {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(135deg,
+            #f7f7f7,
+            #ededed);
+
+    color: #999999;
+}
+
+.cast-content {
+    min-width: 0;
+
+    padding: 11px 12px 13px;
+}
+
+.cast-actor-name {
+    margin: 0 0 5px;
+
+    color: var(--text);
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cast-character {
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 12px;
+    line-height: 1.45;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
 }
 
 
@@ -784,9 +907,11 @@
     }
 
     .movie-details-container {
-        gap: 28px;
-
         padding: 25px;
+    }
+
+    .movie-details-top {
+        gap: 28px;
     }
 
     .movie-details-poster {
@@ -806,6 +931,13 @@
         font-size: 15px;
         line-height: 1.7;
     }
+
+    .cast-grid {
+        grid-template-columns:
+            repeat(auto-fill, minmax(125px, 1fr));
+
+        gap: 13px;
+    }
 }
 
 
@@ -821,13 +953,15 @@
     }
 
     .movie-details-container {
-        flex-direction: column;
-
-        gap: 22px;
-
         padding: 16px;
 
         border-radius: 10px;
+    }
+
+    .movie-details-top {
+        flex-direction: column;
+
+        gap: 22px;
     }
 
     .movie-details-poster {
@@ -910,6 +1044,33 @@
 
         font-size: 12px;
     }
+
+
+    /* CAST */
+
+    .cast-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+    .cast-card {
+        border-radius: 10px;
+    }
+
+    .cast-content {
+        padding: 9px 10px 11px;
+    }
+
+    .cast-actor-name {
+        font-size: 13px;
+    }
+
+    .cast-character {
+        font-size: 11px;
+    }
+
 
     .movie-details-trailer {
         font-size: 13px;
@@ -1036,11 +1197,13 @@
     }
 
     .movie-details-container {
-        gap: 18px;
-
         padding: 12px;
 
         border-radius: 8px;
+    }
+
+    .movie-details-top {
+        gap: 18px;
     }
 
     .movie-details-poster {
@@ -1073,6 +1236,25 @@
 
     .movie-details-section h3 {
         font-size: 17px;
+    }
+
+    /* CAST */
+
+    .cast-grid {
+        gap: 8px;
+    }
+
+    .cast-content {
+        padding: 8px 8px 10px;
+    }
+
+    .cast-actor-name {
+        font-size: 12px;
+    }
+
+    .cast-character {
+        font-size: 10px;
+        line-height: 1.4;
     }
 
     .reviews-section h3 {
@@ -1110,6 +1292,23 @@
         font-size: 11px;
     }
 
+    /* CAST */
+
+    .cast-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 7px;
+    }
+
+    .cast-actor-name {
+        font-size: 11px;
+    }
+
+    .cast-character {
+        font-size: 9.5px;
+    }
+
     .review-card {
         padding: 11px;
     }
@@ -1124,5 +1323,156 @@
 
     .review-actions button {
         flex: 1;
+    }
+}
+
+/* =========================
+   RECOMMENDATIONS
+========================= */
+
+.recommendations-section {
+    margin-top: 45px;
+    padding-top: 30px;
+
+    border-top: 1px solid #e2e2e2;
+}
+
+.recommendations-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 24px;
+}
+
+.recommendations-heading h3 {
+    margin: 0 0 6px;
+
+    color: var(--text);
+
+    font-size: 26px;
+    font-weight: 750;
+}
+
+.recommendations-heading p {
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.recommendations-heading>svg {
+    flex-shrink: 0;
+
+    margin-top: 3px;
+
+    color: var(--primary);
+}
+
+.recommendations-status {
+    padding: 25px;
+
+    background: #fafafa;
+
+    border: 1px dashed #d5d5d5;
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+.recommendations-status p {
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+}
+
+.recommendations-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(190px, 1fr));
+
+    gap: 22px;
+}
+
+
+/* =========================
+   RECOMMENDATIONS - TABLET
+========================= */
+
+@media (max-width: 900px) {
+    .recommendations-grid {
+        grid-template-columns:
+            repeat(auto-fill, minmax(165px, 1fr));
+
+        gap: 16px;
+    }
+
+    .recommendations-heading h3 {
+        font-size: 23px;
+    }
+}
+
+
+/* =========================
+   RECOMMENDATIONS - PHONE
+========================= */
+
+@media (max-width: 600px) {
+    .recommendations-section {
+        margin-top: 30px;
+
+        padding-top: 22px;
+    }
+
+    .recommendations-heading {
+        gap: 12px;
+
+        margin-bottom: 18px;
+    }
+
+    .recommendations-heading h3 {
+        font-size: 21px;
+    }
+
+    .recommendations-heading p {
+        font-size: 12px;
+    }
+
+    .recommendations-heading>svg {
+        width: 19px;
+        height: 19px;
+    }
+
+    .recommendations-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+}
+
+
+/* =========================
+   RECOMMENDATIONS - SMALL PHONE
+========================= */
+
+@media (max-width: 430px) {
+    .recommendations-heading h3 {
+        font-size: 19px;
+    }
+
+    .recommendations-heading p {
+        font-size: 11px;
+    }
+
+    .recommendations-grid {
+        gap: 8px;
     }
 }

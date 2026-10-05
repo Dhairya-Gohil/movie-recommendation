@@ -2,10 +2,11 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 
 from app.sentiment import analyze_sentiment
+from app.recommendation import get_recommendations
 
 
 app = FastAPI(
-    title="MovieAI Service",
+    title="MovieFlick Service",
     description="AI service for movie review analysis and recommendations",
     version="1.0.0"
 )
@@ -15,11 +16,17 @@ class SentimentRequest(BaseModel):
     text: str
 
 
+class RecommendationRequest(BaseModel):
+    movies: list
+    movie_id: int
+    limit: int = 10
+
+
 @app.get("/")
 def root():
     return {
         "success": True,
-        "message": "MovieAI AI Service is running."
+        "message": "MovieFlick AI Service is running."
     }
 
 
@@ -44,4 +51,32 @@ def sentiment_analysis(request: SentimentRequest):
     return {
         "success": True,
         "result": result
+    }
+
+
+@app.post("/recommendations")
+def movie_recommendations(request: RecommendationRequest):
+
+    if not request.movies:
+        return {
+            "success": False,
+            "message": "Movie data is required."
+        }
+
+    if request.limit <= 0:
+        return {
+            "success": False,
+            "message": "Recommendation limit must be greater than zero."
+        }
+
+    recommendations = get_recommendations(
+        request.movies,
+        request.movie_id,
+        request.limit
+    )
+
+    return {
+        "success": True,
+        "movie_id": request.movie_id,
+        "recommendations": recommendations
     }

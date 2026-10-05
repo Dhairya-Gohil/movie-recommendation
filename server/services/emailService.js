@@ -11,10 +11,10 @@ const transporter = nodemailer.createTransport({
 async function sendPasswordResetEmail(email, resetLink) {
 
     await transporter.sendMail({
-        from: `"MovieAI" <${process.env.gmail_user}>`,
+        from: `"MovieFlick" <${process.env.gmail_user}>`,
         to: email,
-        subject: "MovieAI - Password Reset",
-        text: `You requested a password reset for your MovieAI account.
+        subject: "MovieFlick - Password Reset",
+        text: `You requested a password reset for your MovieFlick account.
 
 Click the link below to reset your password:
 
@@ -28,11 +28,11 @@ If you did not request a password reset, you can safely ignore this email.`,
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 30px;">
 
                 <h2 style="color: #e50914;">
-                    MovieAI Password Reset
+                    MovieFlick Password Reset
                 </h2>
 
                 <p>
-                    You requested a password reset for your MovieAI account.
+                    You requested a password reset for your MovieFlick account.
                 </p>
 
                 <p>
@@ -68,7 +68,7 @@ If you did not request a password reset, you can safely ignore this email.`,
                 <hr style="margin-top: 30px; border: none; border-top: 1px solid #eeeeee;">
 
                 <p style="color: #999999; font-size: 12px;">
-                    MovieAI
+                    MovieFlick
                 </p>
 
             </div>

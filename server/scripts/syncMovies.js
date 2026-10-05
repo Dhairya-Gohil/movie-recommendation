@@ -26,6 +26,25 @@ function readCsvFile(fileName) {
     });
 }
 
+function resolveBraveUrl(url) {
+    if (!url || !url.startsWith("https://imgs.search.brave.com/")) return url;
+
+    const marker = "/g:ce/";
+    const markerIndex = url.indexOf(marker);
+    if (markerIndex === -1) return url;
+
+    try {
+        let base64Part = url.substring(markerIndex + marker.length);
+        base64Part = base64Part.replace(/\//g, '');
+        const decoded = Buffer.from(base64Part, 'base64').toString('utf-8');
+        if (decoded.startsWith("http")) {
+            return decoded;
+        }
+    } catch (e) { }
+
+    return url;
+}
+
 function normalizeValue(value) {
     if (value === undefined || value === "" || value === "NA" || value === "N/A") {
         return null;
@@ -74,6 +93,8 @@ async function syncMovies() {
         const directors = readCsvFile("directors.csv");
         const movieDirectors = readCsvFile("movie_directors.csv");
         const trailers = readCsvFile("trailers.csv");
+        const actors = readCsvFile("actors.csv");
+        const movieCast = readCsvFile("movie_cast.csv");
 
         console.log(`Movies: ${movies.length}`);
         console.log(`Genres: ${genres.length}`);
@@ -83,6 +104,8 @@ async function syncMovies() {
         console.log(`Directors: ${directors.length}`);
         console.log(`Movie directors: ${movieDirectors.length}`);
         console.log(`Trailers: ${trailers.length}`);
+        console.log(`Actors: ${actors.length}`);
+        console.log(`Movie cast: ${movieCast.length}`);
 
         /*
          * =========================================
@@ -334,6 +357,63 @@ async function syncMovies() {
                     normalizeValue(trailer.platform),
                     normalizeValue(trailer.trailer_type),
                     normalizeValue(trailer.published_at)
+                ]
+            );
+        }
+
+        /*
+         * =========================================
+         * 9.5 ACTORS
+         * =========================================
+         */
+
+        console.log("Syncing actors...");
+
+        for (const actor of actors) {
+            let profileUrl = normalizeValue(actor.profile_url);
+            profileUrl = resolveBraveUrl(profileUrl);
+
+            await connection.execute(
+                `
+                insert into actors (
+                    actor_id,
+                    actor_name,
+                    profile_url
+                )
+                values (?, ?, ?)
+                on duplicate key update
+                    actor_name = values(actor_name),
+                    profile_url = values(profile_url)
+                `,
+                [
+                    normalizeValue(actor.actor_id),
+                    normalizeValue(actor.actor_name),
+                    profileUrl
+                ]
+            );
+        }
+
+        console.log("Syncing movie cast...");
+
+        for (const cast of movieCast) {
+            await connection.execute(
+                `
+                insert into movie_cast (
+                    movie_id,
+                    actor_id,
+                    character_name,
+                    cast_order
+                )
+                values (?, ?, ?, ?)
+                on duplicate key update
+                    character_name = values(character_name),
+                    cast_order = values(cast_order)
+                `,
+                [
+                    normalizeValue(cast.movie_id),
+                    normalizeValue(cast.actor_id),
+                    normalizeValue(cast.character_name),
+                    normalizeValue(cast.cast_order)
                 ]
             );
         }

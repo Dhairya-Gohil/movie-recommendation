@@ -16,7 +16,7 @@ function Navbar() {
 
                 <div className="logo">
 
-                    🎬 MovieAI
+                    🎬 MovieFlick
 
                 </div>
 

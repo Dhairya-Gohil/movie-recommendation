@@ -19,6 +19,7 @@ function MovieCard({ movie }) {
                             : "https://via.placeholder.com/300x450?text=No+Poster"
                     }
                     alt={movie.title}
+                    style={movie.title === "Love Ni Bhavai" ? { transform: "scale(1.05)" } : {}}
                     onError={(e) => {
                         e.target.onerror = null;
                         e.target.src =

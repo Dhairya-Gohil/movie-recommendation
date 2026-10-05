@@ -153,7 +153,7 @@ function ResetPassword() {
 
                     <p className="reset-password-subtitle">
                         Create a new password for your
-                        MovieAI account.
+                        MovieFlick account.
                     </p>
 
                 </div>
@@ -229,8 +229,8 @@ function ResetPassword() {
 
                         <div
                             className={`reset-password-input-wrapper ${passwordError
-                                    ? "password-mismatch"
-                                    : ""
+                                ? "password-mismatch"
+                                : ""
                                 }`}
                         >
 

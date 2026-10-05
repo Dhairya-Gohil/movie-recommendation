@@ -1,145 +1,352 @@
-﻿actor_id,actor_name,profile_url,
-1,Ranveer Singh,https://imgs.search.brave.com/i4VrtOHlBn-Bh3AtQ5Vg4UuR0hGHgba766dECcqlse0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudG9paW1nLmNv/bS90aHVtYi8xMDIy/MTkwOTQuanBnP3Bo/b3RvaWQ9MTAyMjE5/MDk0JndpZHRoPTYw/MCZyZXNpemVtb2Rl/PTQ,
-2,Akshaye Khanna,NA,
-3,Sanjay Dutt,NA,
-4,Arjun Rampal,NA,
-5,R. Madhavan,NA,
-6,Sara Arjun,NA,
-7,Rakesh Bedi,NA,
-8,Danish Pandor,NA,
-9,Saumya Tondon,NA,
-10,Yami Gautam,NA,
-11,Yash,NA,
-12,Srinidhi Shetty,NA,
-13,Garuda Ram,NA,
-14,Anant Nag,NA,
-15,Raveena Tondon,NA,
-16,Rao Ramesh,NA,
-17,Prakash Raj,NA,
-18,Prabhas,NA,
-19,Prithviraj Sukumaran,NA,
-20,Shruti Haasan,NA,
-21,Jagapathi Babu,NA,
-22,Easwari Rao,NA,
-23,Unni M.,NA,
-24,Siddique,NA,
-25,Jagdish,NA,
-26,Abhimanyu S.K.,NA,
-27,Kabir D. Singh,NA,
-28,Ishan Shoukath,NA,
-29,Yukti Thareja,NA,
-30,Teja Sajja,NA,
-31,Shriya Saran,NA,
-32,Ritika Nayak,NA,
-33,Manoj Manchu,NA,
-34,Aneet Padda,NA,
-35,Ahaan Pandey,NA,
-36,Prince,NA,
-37,Rajesh Kumar,NA,
-38,Geeta Sharma,NA,
-39,Varun Badola,NA,
-40,Kalyani Priyadarshan,NA,
-41,Naslen,NA,
-42,Sandy Master,NA,
-43,Tovino Thomas,NA,
-44,Arjun Kurian,NA,
-45,Chanu Salimkumar,NA,
-46,Rajkumar Rao,NA,
-47,Shraddha Kapoor,NA,
-48,Pankaj Tripathi,NA,
-49,Abhishek Banerjee,NA,
-50,Aparshakti Khurana,NA,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
+﻿actor_id,actor_name,profile_url
+1,Ranveer Singh,https://imgs.search.brave.com/i4VrtOHlBn-Bh3AtQ5Vg4UuR0hGHgba766dECcqlse0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudG9paW1nLmNv/bS90aHVtYi8xMDIy/MTkwOTQuanBnP3Bo/b3RvaWQ9MTAyMjE5/MDk0JndpZHRoPTYw/MCZyZXNpemVtb2Rl/PTQ
+2,Akshaye Khanna,https://imgs.search.brave.com/UvBBLU1gqHzH0V2o0TOnkRX2v4tQikg6HwkWSJ6UuOE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNjk4/OTkyNTY2L3Bob3Rv/L2luZGlhbi1ib2xs/eXdvb2QtYWN0b3It/YWtzaGF5ZS1raGFu/bmEtYXR0ZW5kcy1h/LXByb21vdGlvbmFs/LWV2ZW50LWZvci10/aGUtdXBjb21pbmct/dGhyaWxsZXIuanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPXY1/N0Jnc2lwOVhTNUN1/ajRsQVFFckhDMDdz/MnNBM2ZTQ0hieWNo/NFhld0k9
+3,Sanjay Dutt,https://imgs.search.brave.com/LqDYv-k7CwhfF8yU9L_E4fjSk4FvKI3bUNcluigfFPg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTIz/OTc1Nzc0My9waG90/by9ib2xseXdvb2Qt/YWN0b3Itc2FuamF5/LWR1dHQtcG9zZXMt/Zm9yLXBpY3R1cmVz/LWR1cmluZy10aGUt/cHJvbW90aW9uLW9m/LWhpcy11cGNvbWlu/Zy1maWxtLWstZy5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/MUoxVV9XOUdBZnZr/VndMNW8zVkZIR2hE/SlNrQnU1ckFDdkdV/Sm85RVNrVT0
+4,Arjun Rampal,https://imgs.search.brave.com/2nPcWKUpnlGvXFQLSn8KP6Al2wtC7ziSTv6HAeWo6No/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTc3/NzA4MDE1Ny9waG90/by9tdW1iYWktaW5k/aWEtYXJqdW4tcmFt/cGFsLWF0dGVuZHMt/dGhlLWltZGItcG9y/dHJhaXQtc3R1ZGlv/LWF0LXRoZS0yMDIz/LWppby1tYW1pLW11/bWJhaS1maWxtLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1l/NGdaTTA1eFZtTThG/Mmt2UTJ1cW1HUEla/MU9OM0ZTN1hVcU9W/YTNIVXY4PQ
+5,R. Madhavan,https://imgs.search.brave.com/I7kbe-QDdVyYG5yFHWn-c97Oee-U8XZieMEunUNO5O0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjAy/MTY0MDc4MS9waG90/by9ib2xseXdvb2Qt/YWN0b3Itci1tYWRo/YXZhbi1hdHRlbmRz/LXRoZS10cmFpbGVy/LWxhdW5jaC1vZi1o/aXMtaW5kaWFuLWhp/bmRpLWxhbmd1YWdl/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz1fRXl6V2g1NHBS/NUVlNUFERFZjUTdZ/S0hEVkxOR1FrRHZz/VU5PV1B0VlhRPQ
+6,Sara Arjun,https://imgs.search.brave.com/fZvaCwL2joNNx-r5fXhvdkDbP63WaLKnjVHhm5Br4kY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjI0/NzI1Mzk4Ny9waG90/by9tdW1iYWktaW5k/aWEtc2FyYS1hcmp1/bi1hdHRlbmRzLXRo/ZS10cmFpbGVyLWxh/dW5jaC1vZi1maWxt/LWRodXJhbmRoYXIt/b24tbm92ZW1iZXIt/MTgtMjAyNS1pbi5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/UlVqR2JSR2Q4eThP/dUtDRFdzc3dGY2JT/OHlWR0pXU1QtYTZo/c0hQMU1zRT0
+7,Rakesh Bedi,https://imgs.search.brave.com/qkNwvTwKhjXxOaCudnEA0V720UyFXejo2zUPTd7u-9I/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNTMy/Njk2NTk0L3Bob3Rv/L2NoYW5kaWdhcmgt/aW5kaWEtYm9sbHl3/b29kLWFjdG9yLXJh/a2VzaC1iZWRpLWJl/Zm9yZS1hLXBsYXkt/bWVyYS13aG8tbWF0/bGFiLW5haGktdGhh/LWluLXRhZ29yZS5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/dlRyaXgzZ2wyR1Jp/MjY5ZzZqcEM3b1Qt/SkpmVXpzX1FZZzZq/azBneS11az0
+8,Saumya Tandon,https://th.bing.com/th/id/OIP.aKm25JrH15XH-iFMZ5K28QHaLH?w=204&h=306&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3
+9,Danish Pandor,https://imgs.search.brave.com/hN3XSmpZkuvH8qfJfSfZg3mCjJh8PVD1IoAl124RU8g/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGFy/c2Jpb2h1Yi5pbi93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyNS8x/Mi9EYW5pc2gtUGFu/ZG9yLVByb2ZpbGUu/anBn
+10,Yami Gautam,https://imgs.search.brave.com/xGgczayygYwnvaKpv7NcxeOBAalrZcPHigEcOZNqBbQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuZmlsbWliZWF0/LmNvbS9waC1iaWcv/MjAyNS8xMi95YW1p/LWdhdXRhbTE3NjQ2/ODA3NTBfMi5qcGc
+11,Yash,https://imgs.search.brave.com/AGuk7i0YzUy8H95ZDcFvM3U1HaWUcx06WWf1FbSjRLw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1QllXTTVPVFpo/WldVdFl6VmlPQzAw/WVdReExUZzVOekV0/TVdFMk16VmhNbUk0/TTJVeFhrRXlYa0Zx/Y0djQC5qcGc
+12,Srinidhi Shetty,https://imgs.search.brave.com/bNw2k8zalyJ93nQJSaw3HLlaMfZXICMhi8DjsQ1dbI4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2ZjL2Q2/L2RkL2ZjZDZkZGVm/MDA1MTQ5NmM5Mzdh/NDQxYTZkNjJlODA1/LmpwZw
+13,Garuda Ram,https://imgs.search.brave.com/d1t4EmJowkYIicTSHREhoP6PlApUeOlxoHwahB8gw_4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMub3R0cGxheS5j/b20vaW1hZ2VzL2tn/Zi1jaGFwdGVyLTIt/NDI4LmpwZz9pbXBv/bGljeT1vdHRwbGF5/LTIwMjUwMV9oaWdo/JndpZHRoPTYwMA
+14,Anant Nag,NULL
+15,Raveena Tandon,https://imgs.search.brave.com/ColJCZgKy8Zec-K1If3jiXygQ_WbSASXHBpe5eP3xOE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTM4/OTY3NDc1NS9waG90/by9tdW1iYWktaW5k/aWEtcmF2ZWVuYS10/YW5kb24tYXR0ZW5k/cy10aGUtay1nLWYt/Y2hhcHRlci0yLWZp/bG0tcGhvdG9jYWxs/LW9uLWFwcmlsLTA1/LTIwMjItaW4uanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPTJE/c1BleF9hVVZ3d2VH/ajB1VEY4ekN0SUI1/cExySWZUYnQza0JH/T2dBTjA9
+16,Rao Ramesh,NULL
+17,Prakash Raj,https://imgs.search.brave.com/2ooPX3uYBC1XeC04fAzqSYDgL7Uxrk9v5fu8ffkqBwc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudGltZXNub3du/ZXdzLmNvbS90aHVt/Yi9tc2lkLTE1NDEy/NzIwNCx0aHVtYnNp/emUtMTQ4NzU2Mix3/aWR0aC0xMjgwLGhl/aWdodC03MjAscmVz/aXplbW9kZS03NS8x/NTQxMjcyMDQuanBn
+18,Prabhas,https://imgs.search.brave.com/5dyR6Qw6rhWTD8dDxdrwAoB_s7bXKN754W0iZ6hHisA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuZmlsbWliZWF0/LmNvbS9waC1iaWcv/MjAyMy8wNS9wcmFi/aGFzXzE2ODM2MjQ3/MzcyMC5qcGc
+19,Prithviraj Sukumaran,https://imgs.search.brave.com/Z7FmLDeKY8BDWlV91dt1h5zNHLi-0zb7ntotjaL60Tk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzQyLzM0/LzU2LzQyMzQ1NmUy/NmZmZjJjYWM4YTNh/Njg2YTNmMjBhODZi/LmpwZw
+20,Shruti Haasan,https://imgs.search.brave.com/lfHOtM7TDzNfqxxI-5wfzICKsFcbNUykdZHyy7CRZyM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudG9paW1nLmNv/bS90aHVtYi8xMDk4/MzUzNjYuanBnP2lt/Z3NpemU9MjM0NTYm/cGhvdG9pZD0xMDk4/MzUzNjYmd2lkdGg9/NjAwJnJlc2l6ZW1v/ZGU9NA
+21,Jagapathi Babu,https://imgs.search.brave.com/Zbb-qNh_F-JQmjmwgfb6IvsYtDs5bMrYHpoXZLriyc8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDc0NDM0/NTQuanBn
+22,Easwari Rao,NULL
+23,Unni M.,https://imgs.search.brave.com/ewbQSMxPEIQS2aNSD875tmDQD-pTClu26_ws1_b2U9w/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9say1h/cHMuYm1zY2RuLmNv/bS9BcnRpc3QvMTY1/Ny5qcGc
+24,Siddique,NULL
+25,Jagdish,NULL
+26,Abhimanyu S.K.,NULL
+27,Kabir D. Singh,https://imgs.search.brave.com/6XYD6OSqPXpUDYxQk7w7FJZ5I1p_QjVOTtZTJRyWVPw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1Qk5EQm1Oek15/TnpRdE5EZzNaUzAw/TUdVNExXSTFNemd0/TWpJMU5XRm1NbUl5/TlRZeVhrRXlYa0Zx/Y0djQC5qcGc
+28,Ishan Shoukath,NULL
+29,Yukti Thareja,https://imgs.search.brave.com/-UdMXvxkjpOlwgDSPedS1niZgTFDwsCGc5WEz8T3AlI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9kMmUx/aHUxa3R1cjl1ci5j/bG91ZGZyb250Lm5l/dC93cC1jb250ZW50/L3VwbG9hZHMvMjAy/My8wNy9ZdWt0aS1U/aGFyZWphLTQ0Lmpw/Zw
+30,Teja Sajja,https://imgs.search.brave.com/68JlSD55P_WexCi2mokEIGJlcAfz_iZJNqB6t8rDi9s/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93aWtp/Y2hyb25pY2xlLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/NS8wOS9pbWFnZXMt/MS5qcGc
+31,Shriya Saran,https://imgs.search.brave.com/XP7k7zGvMK4Pe01DDT07fRtDvu5CCaHiwO8P7aX1dCc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGFy/c3VuZm9sZGVkLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAx/Ni8xMi9TaHJpeWEt/U2FyYW4tMS5qcGc
+32,Ritika Nayak,https://imgs.search.brave.com/aFwmjAoUqmKFphZPPx_ZWS4CGqy38zoyNAF4d4bBZP0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzQxLzMy/Lzc1LzQxMzI3NTVh/ZGU2MGM0NzE0Y2Uy/ZjMxNThmYzgzNzUx/LmpwZw
+33,Manoj Manchu,NULL
+34,Aneet Padda,https://imgs.search.brave.com/N6_-1L4nlEJwGx1kQOutKM0BYIp2Fhm5h1wTfLw9Cms/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YW5lZXRmYW5wYWdl/LmluL2Fzc2V0cy9n/YWxsZXJ5L2dhbGxl/cnktMDQuanBn
+35,Ahaan Pandey,https://imgs.search.brave.com/1neD3FU10SkX0MzdMDdbRrjUIX9a4GI4kSZXqq0Qr-E/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzAwL2Ew/LzI4LzAwYTAyODA0/ZDVkMTJiZmZlYWIx/YjE1NGM2ZmM0NTBk/LmpwZw
+36,Prince,NULL
+37,Rajesh Kumar,https://imgs.search.brave.com/I3mdBdGehhFIsjfp2LdXYINuDu06ypfpdhTNUYniuyQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy8x/LzFkL1JhamVzaF9r/dW1hcl9jb2xvcnNf/aW5kaWFuX3RlbGx5/X2F3YXJkcy5qcGc
+38,Geeta Sharma,NULL
+39,Varun Badola,NULL
+40,Kalyani Priyadarshan,https://imgs.search.brave.com/TQHBKcdBsvRwsPn6enWJkG9STy2T8LO7yU_b4v23CVk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2U0L2Y3/LzFlL2U0ZjcxZWNl/YzQxMTJmZGY1MWIx/ZmY5YWRkMDY2MmE1/LmpwZw
+41,Naslen,https://imgs.search.brave.com/68ZRSYIzkOeRDJYQGN249VGXWB8mxA_LEVwY5cKqepI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS50aGVtb3ZpZWRi/Lm9yZy90L3AvdzMw/MF9hbmRfaDQ1MF9m/YWNlLzhjQVZ0RUxH/aDJaTDVEaHlpallC/aUFRRjJadC5qcGc
+42,Sandy Master,https://imgs.search.brave.com/gfvzgkcM2o3sp1XX62Wt0OKRplCi2zsqtGh_yrA6Qzo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/d2VncmVlbmt3LmNv/bS9zaXRlcy8zLzIw/MjMvMDIvU2FuZHkt/TWFzdGVyLTIxNHgz/MDAud2VicA
+43,Tovino Thomas,https://imgs.search.brave.com/yxsPyRgGbhdHTZH_q1aTJtjhg516v_bKfs2sgI8c4wk/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGFy/c3VuZm9sZGVkLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAx/Ni8xMS9Ub3Zpbm8t/VGhvbWFzLmpwZw
+44,Arun Kurian,https://imgs.search.brave.com/GwfywpJv1ci_MLyXrTE8Y4yaGe_WdyXeFpV_KyT9VH8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/YW55LW9uLWFydW4t/a3VyaWFuLXYwLTRm/M2VlYXhkYXh3ZjEu/anBlZz93aWR0aD02/NDAmY3JvcD1zbWFy/dCZhdXRvPXdlYnAm/cz01NDU1NjgxZGNj/ODg0Yzk0NzYzNTBl/ZmIwODZiOGQ4ZjU2/YWNhZmQw
+45,Chanu Salimkumar,NULL
+46,Rajkumar Rao,https://imgs.search.brave.com/rfBYtz-_-VhT-i8i85-xGLJHJ6ou2Olae1G_5yYIjjc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudG9paW1nLmNv/bS90aHVtYi9pbWdz/aXplLTIzNDU2LG1z/aWQtODgzNzg5OTYs/d2lkdGgtNjAwLHJl/c2l6ZW1vZGUtNC84/ODM3ODk5Ni5qcGc
+47,Shraddha Kapoor,https://imgs.search.brave.com/Pyp0GARe8CnkWcCjevWsNyN2HyYeccY-gZOWcofoCrc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZmFiZnVuZGEuY29t/L2Jsb2cvd3AtY29u/dGVudC91cGxvYWRz/LzIwMjUvMDkvU2hy/YWRkaGEtS2Fwb29y/LWluLVNpbHZlci1X/aGl0ZS1Db2xvdXIt/U2FyZWUtNjMweDg0/MC5qcGc
+48,Pankaj Tripathi,https://imgs.search.brave.com/hxjevKbnF642gHk1Eq9GNBRiLkdlJ4aWrPAqbWdBID8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTI0/NjE5ODY0Ni9waG90/by9uZXctZGVsaGkt/aW5kaWEtYm9sbHl3/b29kLWFjdG9yLXBh/bmthai10cmlwYXRo/aS1wb3Nlcy1mb3It/cHJvZmlsZS1waWN0/dXJlLW9uLW1hcmNo/LTI3LTIwMjItaW4u/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PTk2QktsdEp1YzFB/NlNpSGFLNDZ3cTlR/eDA5UVZBU3ZrQVk2/OF9GdkVMYms9
+49,Abhishek Banerjee,https://imgs.search.brave.com/9jKEiefzfKSW83LNWPTQKn8IXF2rvAA3I3goN_iov5w/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGFy/c3VuZm9sZGVkLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/Ni8wNC9BYmhpc2hl/ay1CYW5lcmplZS1h/ZnRlci13aW5uaW5n/LWFuLWF3YXJkLWF0/LXRoZS0yMDI2LUNo/ZXRhay1TY3JlZW4t/QXdhcmRzLmpwZw
+50,Aparshakti Khurana,https://imgs.search.brave.com/4YPx5wUN4qrVFrW5pTSIEmX4H70zxpcZMoRsf3VZVwU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jLnNh/YXZuY2RuLmNvbS9h/cnRpc3RzL0FwYXJz/aGFrdGlfS2h1cmFu/YV8wMDBfMjAyNDA1/MzAxMzQwMTRfNTAw/eDUwMC5qcGc
+51,Tamannah Bhatiya,https://imgs.search.brave.com/7Qp4fF_W-08Xq0kfYbeWSgqRFGe-7qDT77casx7bahs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzJlLzAz/L2EyLzJlMDNhMjVk/ODEwZjNhNzViMjRk/ZWIzNmFjZDE0YTZl/LmpwZw
+52,Varun Dhawan,https://imgs.search.brave.com/IFEO8wY4l2cHakwCwmRsBLHApYLEtQ5S-0LQpbhxxZQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2U0LzNi/LzQ1L2U0M2I0NTg5/NDVjMGNkNTM0N2M5/YjY1MDk0NGJjM2Iw/LmpwZw
+53,Sunil Kumar,NULL
+54,Anya Singh,https://imgs.search.brave.com/8xi_HoLFkMbEkCBLK7twiRSh2XUi4s-_cjJ-usE3zxo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGFy/c2Jpb2h1Yi5pbi93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyNi8w/My9BbnlhLVNpbmdo/LVByb2ZpbGUuanBn
+55,Kriti Sanon,https://imgs.search.brave.com/1vwoLn9M3lOHmpbnqjnku9hX2PZ4tG7J08AqH_j-UQE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvdGh1bWJu/YWlsL3RlYWwteWVs/bG93LWtyaXRpLXNh/bm9uLWhkLXVmNTFt/NDloaHFvYWRoaHEu/anBn
+56,Paalin Kabak,NULL
+57,Deepak Dobriyal,NULL
+58,Ayushmann Khurana,https://imgs.search.brave.com/-BJcmRNXAI70kwGu86CkSDNNMDpl3ZGUMO8Ntn_8dPc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvODI1/OTA5MzMwL3Bob3Rv/L211bWJhaS1pbmRp/YS1hdWd1c3QtMDEt/YXl1c2htYW4ta2h1/cmFuYS1kdXJpbmct/dGhlLXRyYWlsZXIt/bGF1bmNoLW9mLXRo/ZS1maWxtLXNodWJo/LW1hbmdhbC5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9TmlI/RlNJbzQ5cERBbWFq/SnRrc0E5c3N4aFNY/Sy1WUWZWV3V0WW80/b1B5ND0
+59,Rashmika Mandanna,https://imgs.search.brave.com/G0p0OSJHJj4iNdwo9TuzBRiTPWNVyr8Ay476aB1y6QY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzIwLzM1/L2U3LzIwMzVlNzMy/MGEyYzFhODI1ZTE0/MzkxNzdhYzBhNWFm/LmpwZw
+60,Nawazuddin Siddiqui,https://imgs.search.brave.com/GhN2YwfNEdxsUTCubU6vk9uE9RdNwO_OIlKnz4jZMn4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudG9paW1nLmNv/bS90aHVtYi8xMDUw/NzYyMDEuanBnP3Bo/b3RvaWQ9MTA1MDc2/MjAxJndpZHRoPTYw/MCZyZXNpemVtb2Rl/PTQ
+61,Faisal Malik,NULL
+62,Paresh Rawal,https://imgs.search.brave.com/N1q5ZMUmYdnH2SuibMIXMjjC1mEwadWhElc7KsZgDmM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNDYx/NDc4MjY4L3Bob3Rv/L211bWJhaS1tYWhh/cmFzaHRyYS1qYW51/YXJ5LTEyLXBhcmVz/aC1yYXdhbC1hdC10/aGUtYW5ub3VuY2Vt/ZW50LWNlcmVtb255/LW9mLWhlcmEtcGhl/cmktMy5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9blNVeWxG/ZG04bW9VcWdnZUhG/dlhKcFBmSmVZcE1V/YVFCU1VQZjNYSTBR/VT0
+63,Abhay Verma,https://imgs.search.brave.com/44mbG0c0BN91KxX7Vb-0imG8Xe91r9DaFxhdpj_D28c/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/Ym9sbHl3b29kc2hh/YWRpcy5jb20vaW1n/L2FydGljbGUtMjAy/NDYxNjUxMTIyMDA0/MDkyMDAwMC53ZWJw
+64,Sharvari,https://imgs.search.brave.com/suKZxOGNaiz0kWWRZav6KRk4dhyNdx4R3OG_1a-wDU0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/aGluZHVzdGFudGlt/ZXMuY29tL2h0LWlt/Zy9pbWcvMjAyNC8w/Mi8wMy81NTB4MzA5/L3NoYXJ2YXJpX3dh/Z2hfM18xNzA2OTQ0/NjkzNjk2XzE3MDY5/NDQ3Mjk5ODkuanBn
+65,Bhagyashree Limaye,https://imgs.search.brave.com/FxsvqvRaOG8ftb6jZ_npqqU530FRzbj_uEbzLqpbU-k/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/anVzdG1hcmF0aGku/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDIyLzA4L0JoYWd5/YXNocmVlLUxpbWF5/ZS1jdXRlLmpwZw
+66,Mona Singh,NULL
+67,Sathyaraj,https://imgs.search.brave.com/-f3zQH_63xzwHHiiaYK5p8ig_8Cnk3E8SKwBcNQ1-d0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDk3ODEy/NjYuanBn
+68,Pranav Mohanlal,https://imgs.search.brave.com/pNNGcbGSctYs9BD4kAcWsOeDSqXQCSIccXnb-32yIhs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jb250/ZW50My5qZG1hZ2lj/Ym94LmNvbS9ldmVu/dHMvQTk2NDY5OC9B/OTY0Njk4X2dhbF8y/MDE4MDEyMjE2NTky/Mi5qcGc
+69,Darshana Rajendran,https://imgs.search.brave.com/2SWl9JwIjBEqVJ8e3aK2J36tjsD4-_7yItCAMQ_NoD4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93aWtp/YmlvLmluL3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDIyLzA5L0Rh/cnNoYW5hLVJhamVu/ZHJhbi5qcGc
+70,Abhishek Joseph,NULL
+71,Annu Antony,https://imgs.search.brave.com/0SXo17dGCbopZnqdwfu30salsnRnkCn4_7iwyOyIXDE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tM2Ri/LmNvbS9zaXRlcy9k/ZWZhdWx0L2ZpbGVz/L3N0eWxlcy9sYXJn/ZS9wdWJsaWMvYW5u/dS1hbnRvbnlfNC5q/cGc_aXRvaz1zTEtT/RVNEYw
+72,Adityan Chandrashekhar,NULL
+73,Manjula Mohandas,https://imgs.search.brave.com/F1Ho2esVWw3Ot1mcRAJxPLclJ5mH-t_wDgf4JMxqhlA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudG9paW1nLmNv/bS90aHVtYi9pbWdz/aXplLTIzNDU2LG1z/aWQtOTkyODY2NDIs/d2lkdGgtNjAwLHJl/c2l6ZW1vZGUtNC85/OTI4NjY0Mi5qcGc
+74,Kalesh Ramanand,NULL
+75,Aju Varghese,NULL
+76,Ashwanth Lal,NULL
+77,Anushka Shetty,https://imgs.search.brave.com/FP5ptTxe2hcyzM8iCZJfV6MRyK9J2Nb8NXaZYvn64Fg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzNiLzIx/Lzk2LzNiMjE5Njli/NWJmMzFhODdjMjZl/NzI2NGRiZGNiOWQx/LmpwZw
+78,Rana Daggubati,https://imgs.search.brave.com/vnt0hnmSvDyVb3sfFspa0m1x8QktMuvOGrd5-UxW-A4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2U3L2Y1/LzlhL2U3ZjU5YTVm/MTI3ZDJkNTRhZjM2/NmJlOGI5MDhiNzI5/LmpwZw
+79,Ramya Krishnan,https://imgs.search.brave.com/0RqJviyDn249z-AmnI-0Uc6BbJZpHqqnHYwMKA2en9U/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudG9paW1nLmNv/bS90aHVtYi8xMDM2/MTAyMzYuanBnP2lt/Z3NpemU9MjM0NTYm/cGhvdG9pZD0xMDM2/MTAyMzYmd2lkdGg9/NjAwJnJlc2l6ZW1v/ZGU9NA
+80,Nassar,https://imgs.search.brave.com/r1Qsomz9b2muTE8-IYs5dzLo8RoDlBYGf7BvxhMQSNo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9m/L2Y0L05hc3Nhcl9h/dF9PcnVfS2FkaGFp/X1NvbGxhdHR1bWFh/X0F1ZGlvX0xhdW5j/aF8oY3JvcHBlZCku/anBn
+81,Charandeep,NULL
+82,Subbaraju Santosh,NULL
+83,Akshay Kumar,https://imgs.search.brave.com/SQjcRG_p1iIiA2IUXbvDsUVJ3s8FqwQE9UrF4Hh15M4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjI0/MDQwMzA4MS9waG90/by9ib2xseXdvb2Qt/YWN0b3ItYWtzaGF5/LWt1bWFyLWF0dGVu/ZHMtYS1wcmVzcy1j/b25mZXJlbmNlLWZv/ci10aGUtdXBjb21p/bmctamlvaG90c3Rh/ci1mYXNoaW9uLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1a/TnlYSnFiRU85MVFj/MmJTcjczWTByRzVn/TVl4VkRTUEYzNUFJ/TkhrYVh3PQ
+84,Wamiqa Gabbi,https://imgs.search.brave.com/enN1qsDDN4itR30eVy1S3STh6iZKzax3CkoqjIXzze4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDUzNTY5/ODkuanBn
+85,Asrani,NULL
+86,Mithila Palker,https://imgs.search.brave.com/ovOsg2JPdT9kX8E17U0odvv0VEvioojIIKCIk8CEzr8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuZmlsbWliZWF0/LmNvbS9waC1iaWcv/MjAyNi8wNC9taXRo/aWxhLXBhbGthcjE3/NzU4MjA0OTVfMy5q/cGc
+87,Rajpal Yadav,https://imgs.search.brave.com/5OcJn18Biac60QkHM11Gbp6Z0Tty5KR1UrOJSFnXVaM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudG9paW1nLmNv/bS90aHVtYi8xNzUz/MDU2OS5qcGc_cGhv/dG9pZD0xNzUzMDU2/OSZ3aWR0aD02MDAm/cmVzaXplbW9kZT00
+88,Tabu,NULL
+89,Manoj Joshi,https://imgs.search.brave.com/Gf9GK6tiRwpSQswb1lCQSMcX2gPJKk3YJGZ-i0-5fNY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/Yi53aWtpbWVkaWEu/b3JnL3dpa2lwZWRp/YS9jb21tb25zL3Ro/dW1iLzMvMzEvTWFu/b2pfSm9zaGlfYXRf/QmhvcGFsLkpQRy8y/NTBweC1NYW5val9K/b3NoaV9hdF9CaG9w/YWwuSlBHP3V0bV9z/b3VyY2U9ZW4ud2lr/aXBlZGlhLm9yZyZ1/dG1fY2FtcGFpZ249/cGFyc2VyJnV0bV9j/b250ZW50PXRodW1i/bmFpbA
+90,Zakir Hussain,NULL
+91,Meenakshi Chaudhary,NULL
+92,Dulquer Salmaan,NULL
+93,Sarvadaman Banerjee,NULL
+94,Sachin Khedekar,NULL
+95,Tinnu Anand,NULL
+96,Rajkumar Kasireddy,NULL
+97,Sai Kumar,NULL
+98,Ritvik Raj,NULL
+99,Maansa Chaudhary,NULL
+100,Abhishek Bachchan,NULL
+101,Nikita Dutta,https://imgs.search.brave.com/uGwUy9oVROSCNQFFt9AwyM_Zxj3zlrd51lAKDL-qXMc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudG9paW1nLmNv/bS90aHVtYi85ODgx/MDI4MC5qcGc_cGhv/dG9pZD05ODgxMDI4/MCZ3aWR0aD02MDAm/cmVzaXplbW9kZT00
+102,Sumit Vyas,NULL
+103,Illeana D'Cruz,https://imgs.search.brave.com/Y6pNF8MPFTQAKwbV_SXLLFURuJrE7h1XDrx0agJp4nw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudG9paW1nLmNv/bS90aHVtYi85MjE0/NTEzNC5qcGc_cGhv/dG9pZD05MjE0NTEz/NCZpbWdzaXplPTIz/NDU2JndpZHRoPTYw/MCZyZXNpemVtb2Rl/PTQ
+104,Lekha Prajapati,NULL
+105,Saurabh Shukla,NULL
+106,Shishir Sharma,NULL
+107,Mahesh Manjrekar,NULL
+108,Radhika Madan,https://imgs.search.brave.com/N5_AMxccj8JMuUujw0bqIj_Mi77iNUmtF-XdfEvWGCc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1Qk1UZzFaV0k1/TW1ZdFpXSXdNUzAw/TURGbUxUa3dPRFV0/TW1FMU9EUmpaVGd6/WXpBMFhrRXlYa0Zx/Y0djQC5qcGc
+109,Mohit Raina,NULL
+110,Diana Penty,https://imgs.search.brave.com/zAga-nb7mtjDkt3-gQeb5Di97AKIzZkK8m-0Khv_tDo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzc0LzRl/Lzc4Lzc0NGU3ODZl/YmY2ZWU5ZjkzN2M1/MjU3YzBmZjA0NWJj/LmpwZw
+111,Sunny Kaushal,NULL
+112,Shushant Singh Rajput,https://imgs.search.brave.com/yi6aSJFk2sVAQkasJY0DSuSw9vMhJBppecfmnWOF0iU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJhY2Nlc3Mu/Y29tL2Z1bGwvMzA5/MzUxOC5qcGc
+113,Anupam Kher,https://imgs.search.brave.com/Si_R_TYU9JualdkGqqZBREkT2QC7IfxiJfXwhatvq18/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/c2h1dHRlcnN0b2Nr/LmNvbS9pbWFnZS1w/aG90by9sb3MtYW5n/ZWxlcy1mZWItMjAt/YW51cGFtLTI2MG53/LTEzMTg1OTQ2MzQu/anBn
+114,Kiara Advani,https://imgs.search.brave.com/fcEsAzeVIzxf6XNfGBBIZqMXFjYanuayzR-Tybv51U0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/cmFwdHVyZW11c2Uu/Y29tL1BlcnNvbnMv/cHJvZmlsZS83YTVh/MDNlMmZmZDhfb3Jp/Z2luYWwud2VicA
+115,Disha Patni,https://imgs.search.brave.com/HN_bLkTfTni2ngEd_R-FCdDEuhfSz7vBkUIbwxzoV9c/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjA0/ODg4OTcxMS9waG90/by9haGVtZGFiYWQt/aW5kaWEtZGlzaGEt/cGF0YW5pLWF0dGVu/ZC10aGUtdHJhaWxl/ci1sYXVuY2gtb2Yt/ZmlsbS15b2RoYS1v/bi1mZWJydWFyeS0y/OS0yMDI0LWluLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1M/SWJCMk9xSGE5cVFY/OS11aDlNQ3pJaV9Y/NmtwaWcxQVNDcndC/N2ZKbTdZPQ
+116,Bhumika Chawla,https://imgs.search.brave.com/Zj0_H21f4S_5f_jLPqQYyTTK4n_8nbGbgD9LYCVtO3k/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJhY2Nlc3Mu/Y29tL2Z1bGwvMjcw/NjI0MS5qcGc
+117,Herry Tangri,NULL
+118,Kumud Mishra,NULL
+119,Rajesh Sharma,NULL
+120,Kranti Prakash Jha,NULL
+121,Sandeep Nahar,NULL
+122,Alok Pandey,NULL
+123,Sanjay Dadich,NULL
+124,Rhea Sharma,https://imgs.search.brave.com/pgiPfKY30xcA2oz1JHf5reTZMSDVrGUS-MIGG56rGHQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/aW5kaWFmb3J1bXMu/Y29tL3BlcnNvbi80/ODB4MzYwLzEvMjg5/OS1yaGVhLXNoYXJt/YS53ZWJw
+125,Neetha Mohindra,NULL
+126,Kartik Aaryan,NULL
+127,Shikha Talsaina,NULL
+128,Anuradha Patel,NULL
+129,Gajraj Rao,NULL
+130,Arjun Aneja,NULL
+131,Supriya Pathak,NULL
+132,Siddharth Randeria,NULL
+133,Ranbir Kapoor,https://imgs.search.brave.com/1h54NTb6gdZH9D7NDVQ0fOLw2E6MdPglAN8fbROUCiU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/Yi53aWtpbWVkaWEu/b3JnL3dpa2lwZWRp/YS9jb21tb25zL3Ro/dW1iLzAvMDkvUmFu/YmlyX0thcG9vcl9w/cm9tb3RpbmdfSmFn/Z2FfSmFzb29zLmpw/Zy8yNTBweC1SYW5i/aXJfS2Fwb29yX3By/b21vdGluZ19KYWdn/YV9KYXNvb3MuanBn/P3V0bV9zb3VyY2U9/ZW4ud2lraXBlZGlh/Lm9yZyZ1dG1fY2Ft/cGFpZ249cGFyc2Vy/JnV0bV9jb250ZW50/PXRodW1ibmFpbA
+134,Tripti Dimri,https://imgs.search.brave.com/JtOsaMJndDiIs7yzcIgKS74C23bIiYh4XTUNlGhuzOQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudG9paW1nLmNv/bS90aHVtYi8xMTI5/NjM5MDIuanBnP3Bo/b3RvaWQ9MTEyOTYz/OTAyJndpZHRoPTYw/MCZyZXNpemVtb2Rl/PTQ
+135,Bobby Deol,NULL
+136,Anil Kapoor,NULL
+137,Saurabh Sachdeva,NULL
+138,Shakti Kapoor,NULL
+139,Saloni Batra,NULL
+140,Babloo Prithveeraj,NULL
+141,Mrunal Thakur,https://imgs.search.brave.com/QHafT6YdCt1C9wc6B-vpCZnrtqqmAMAQXYnV_W22wgs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2IyLzY2/LzJlL2IyNjYyZTc2/YTA0MmM1NjBlMGVm/MjMyNzZmOTIzYTlk/LmpwZw
+142,Rukmini Vijaykumar,NULL
+143,Jisshu Sengupta,NULL
+144,Murli Sharma,NULL
+145,Vennela Kishore,NULL
+146,Amitabh Bachchan,NULL
+147,Pavail Gulat,NULL
+148,Elli AvrRam,NULL
+149,Neena Gupta,NULL
+150,Abhishekh Khan,NULL
+151,Sunil Grover,NULL
+152,Payal Thapa,NULL
+153,Shivin Narang,NULL
+154,Vicky Kaushal,NULL
+155,Ashutosh Rana,NULL
+156,Divya Dutta,NULL
+157,Pradeep Rawat,NULL
+158,Vijay Vikram Singh,NULL
+159,Sanchita Ugale,NULL
+160,Deepika Padukone,https://imgs.search.brave.com/bPKCtzBBGkTe_XFxIHInvN96zJStY5K_R-ikpoXgCPM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2ZlL2Qy/LzE1L2ZlZDIxNThm/NjNkNzU3NjJjODE3/MjNmOWIwY2NiMmEw/LmpwZw
+161,Kamal Haasan,NULL
+162,Vijay Deverkonda,NULL
+163,Anna Ben,NULL
+164,Malvika Nair,NULL
+165,Pooja Hegde,https://imgs.search.brave.com/NnvO7O-iaA05DINFf0MHPKa5Fs8tvQ3hma2DjVNliwQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2Y0Lzli/LzJhL2Y0OWIyYTAx/MmI3YTFiNmZlMTQ4/ZDgyNzUxNjljMWEw/LmpwZw
+166,Riddhi Kumar,NULL
+167,Kunaal Kumar Roy,NULL
+168,Priyadarshi Pulikonda,NULL
+169,Ram Kapoor,NULL
+170,Hritik Roshan,NULL
+171,Sanjeeda Saikh,https://imgs.search.brave.com/8IhV8i4h2w4yd9Y4H4B46_5gYZl4vc3soJIM1GGX8z4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/aW5kaWFmb3J1bXMu/Y29tL21lZGlhLzgw/MHgwLzYwLzQ0MDQt/c2FuamVlZGEtc2hh/aWtoLXNuYXBwZWQt/cHJvbW90aW5nLWhl/ZXJhbWFuZGkud2Vi/cA
+172,Akshay Oberoi,NULL
+173,Karan Singh Grover,NULL
+174,Rishabh Sawhney,NULL
+175,Priyamani,NULL
+176,Arun Govil,NULL
+177,Raj Arjun,NULL
+178,Skand Thakur,NULL
+179,Shivam Khajuria,NULL
+180,Riva Arora,https://imgs.search.brave.com/9BNVulOjvsj7YFySD7lazt41rW-S2F1BUtJXVcCBGss/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuZmlsbWliZWF0/LmNvbS9waC1iaWcv/MjAyNC8wNC9yaXZh/LWFyb3JhXzE3MTIz/ODc4ODIxNC5qcGc
+181,Kirti Kulhari,https://imgs.search.brave.com/ARXxslRvou4SGonn8pWD3JzdEQde9ye_OsTfaxQqhoU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnJl/ZGQuaXQvcTQ2cDNq/aDU2dzlmMS5qcGc
+182,John Abraham,NULL
+183,Boman Irani,NULL
+184,Aditya Hitkari,NULL
+185,Yogendra Tikku,NULL
+186,Vikas Kumar,NULL
+187,Ajay Shankar,NULL
+188,Anuja Sathe,https://imgs.search.brave.com/IvyiA3DBgikGCQaRl-JO4k0vw0fs6brcsAgXsO75alQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vbWFyYXRo/aWNlbGVicy5jb20v/d3AtY29udGVudC91/cGxvYWRzLzIwMTcv/MDYvMTA2NzU1ODBf/MTAyMDQ5MTU1Njk0/NjQ2OTZfMjg5NTYz/ODA3MTU1MjQzMTgx/Ml9uLmpwZz9yZXNp/emU9MzAwLDMwMCZz/c2w9MQ
+189,Joseph Vijay,NULL
+190,Trisha Krishnan,https://imgs.search.brave.com/wBVfnuJwci-VBPtRr3rfNhAA3nizvd5cGWGLo6Okmyg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2ViL2Yy/L2Y0L2ViZjJmNDIy/NWZhNTUwYmQyYzY0/ZDlhMThiY2RiNzFm/LmpwZw
+191,Arjun Sarja,NULL
+192,Madonna Sebastian,NULL
+193,Gautam Menon,NULL
+194,George Maryan,NULL
+195,Vijay Sethupathi,https://imgs.search.brave.com/Fp4i4hSh47WwTzm_VWekjAoymkWG-0gYx7OhB2bXfX8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YmVoaW5kd29vZHMu/Y29tL3RhbWlsLWFj/dG9yL3ZpamF5LXNl/dGh1cGF0aGkvdmlq/YXktc2V0aHVwYXRo/aS1zdGlsbHMtcGhv/dG9zLXBpY3R1cmVz/LTM2LmpwZw
+196,Suriya,https://imgs.search.brave.com/AuLlS-3D7x4A2fYhLsjvq1qVFtq_qDp7LTNm_lOF27s/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YmVoaW5kd29vZHMu/Y29tL3RhbWlsLWFj/dG9yL3N1cml5YS9z/dXJpeWEtc3RpbGxz/LXBob3Rvcy1waWN0/dXJlcy00NTEuanBn
+197,Fahadh Faasil,https://imgs.search.brave.com/05j2AHrL9DFvHeov54_6aYYf_Wjs8zWsk2g5PSQwvZw/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudG9paW1nLmNv/bS90aHVtYi85MjM4/ODI2MC5qcGc_cGhv/dG9pZD05MjM4ODI2/MCZ3aWR0aD02MDAm/cmVzaXplbW9kZT00
+198,Arjun Das,NULL
+199,Gayathrie,https://imgs.search.brave.com/0K9hpkNTqDzL8GIHyJgTTPpG-4w0mOOugK7wPPy_oBA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/Z2V0aHVjaW5lbWEu/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDIyLzA2L0dheWF0/aHJpZS01OC0yNDB4/MzAwLmpwZw
+200,Maheshwari,NULL
+201,Myna Nandhini,NULL
+202,Shivani Narayan,https://imgs.search.brave.com/2A0HTsTBd0Z0sy2ghxjx3KWOS8q9bi5XOFzOX8dWs7Q/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/Z2V0aHVjaW5lbWEu/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDIyLzA1L1NoaXZh/bmlOYXJheWFuYW4t/MjYwLTI0MHgzMDAu/anBn
+203,Suniel Shetty,NULL
+204,Bipasa Basu,https://imgs.search.brave.com/pmiou_z-twGgB8BSXjDv5pQcFbJkctnO3Luuwr7HFKE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzVmL2U4/L2M5LzVmZThjOTk3/MDZjM2RjMGFkODYx/ZTk1YzM5YTA1MDIx/LmpwZw
+205,Rimi Sen,https://imgs.search.brave.com/YgruyBWQRVkK1Riwj4h1EKYFfATftBMk-cGKYaY-t9M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2ViLzk5/LzQ3L2ViOTk0Nzk2/MDA5MDBhMDk2ZDZj/NDRjZmY3NTVjNmVj/LmpwZw
+206,Johny Lever,NULL
+207,Sharat Saxena,NULL
+208,Altaf Shivdasani,NULL
+209,Tiku Talsania,NULL
+210,Ameesha Patel,https://imgs.search.brave.com/Gh1vHI_STEj8BPane3FgiCsBPUlFMZOY-K1FvDKHa8M/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2NhLzcx/LzhlL2NhNzE4ZTNk/NjAyOWU1NjQ1NmMx/YzkyNmM1NmMyNDkw/LmpwZw
+211,Vidya Balan,https://imgs.search.brave.com/4u4cVK-Rv7_Oauolaw8nayqvSy2sHV0-I88aY-qLI3Q/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudG9paW1nLmNv/bS90aHVtYi8xMDU3/MzU4NjUuanBnP3Bo/b3RvaWQ9MTA1NzM1/ODY1JndpZHRoPTYw/MCZyZXNpemVtb2Rl/PTQ
+212,Shiney Ahuja,NULL
+213,Vineeth,NULL
+214,Vyoma Nandi,https://imgs.search.brave.com/sOjNGf22FQ7_q-S9dYUc4Ey8AMmacfVAprwnXu5yhSY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL00v/TVY1QllXVXdNbVkz/WkRJdE4yVmhNeTAw/TXpRekxUZ3pabU10/WVdFNE0yTTNOalJs/TW1RMFhrRXlYa0Zx/Y0djQC5qcGc
+215,Mahek Manwani,https://imgs.search.brave.com/L8Uc5hZiXPUKRzwl7RP3gLGwxoj8kRSRbP0JSlTt2hg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC93cDkzOTA3/OTMuanBn
+216,Amar Upadhyay,NULL
+217,Ashwini Kalsekar,NULL
+218,Sanjay Mishra,NULL
+219,Shahid Kapoor,NULL
+220,Kareena Kapoor,https://imgs.search.brave.com/Ffe55Pn0zk42SGr3tq6g6FkVMmM1cttnlxqnXdFAbo0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuZmlsbWliZWF0/LmNvbS9waC1iaWcv/MjAyNi8wOS9rYXJl/ZW5hLWthcG9vcjE3/ODgyMzg1NjNfMC5q/cGc
+221,Tarun Arora,NULL
+222,Aditi Rao Hydari,https://imgs.search.brave.com/mQWUrwYPsMGrj2xA-Aaodzku1NxJIHkTHdMswhixlKc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuZmlsbWliZWF0/LmNvbS9waC1iaWcv/MjAyNi8wNS9hZGl0/aS1yYW8taHlkYXJp/MTc3OTE5NTQ5Nl8z/LmpwZw
+223,Jim Sarbh,NULL
+224,Priyanka Chopra,https://imgs.search.brave.com/DZx8lyMMQfAmj3MiPfTkZMrctqq5RQTXdlwmKSHsabM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzlmLzMy/LzRhLzlmMzI0YThh/OTE3YjAwZGZmZmFl/M2M0YzkyZTgwODk2/LmpwZw
+225,Tanvi Azmi,NULL
+226,Shahrukh Khan,NULL
+227,Mouni Roy,https://imgs.search.brave.com/BSMcY9cyKE0nFvKpZfvnp630VEP4EsBxaHjmgHJ8QKM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzJkLzg5/L2ZmLzJkODlmZjE0/YjRlMDFkNjljYmMw/YTc5OWNhMmUzNTgw/LmpwZw
+228,Alia Bhatt,https://imgs.search.brave.com/czs-Egx2F6iUiRf1twRz-XXMwb6tmCe6hph0LmSlhjI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/Yi53aWtpbWVkaWEu/b3JnL3dpa2lwZWRp/YS9jb21tb25zL3Ro/dW1iLzAvMDUvQWxp/YV9CaGF0dF9hdF9N/dWtlc2hfQW1iYW5p/JUUyJTgwJTk5c19y/ZXNpZGVuY2VfZm9y/X0dhbmVzaF9DaGF0/dXJ0aGlfY2VsZWJy/YXRpb25fKDIwKS5q/cGcvMjUwcHgtQWxp/YV9CaGF0dF9hdF9N/dWtlc2hfQW1iYW5p/JUUyJTgwJTk5c19y/ZXNpZGVuY2VfZm9y/X0dhbmVzaF9DaGF0/dXJ0aGlfY2VsZWJy/YXRpb25fKDIwKS5q/cGc_dXRtX3NvdXJj/ZT1oaS53aWtpcGVk/aWEub3JnJnV0bV9j/YW1wYWlnbj1wYXJz/ZXImdXRtX2NvbnRl/bnQ9dGh1bWJuYWls
+229,Lehar Khan,https://imgs.search.brave.com/SGtmeALs6tZzozcNaq5b0srJMugbTRDCDlS7LnUWg_o/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMudGVsZWdyYXBo/aW5kaWEuY29tL2Fi/cC8yMDIzL0F1Zy8x/NjkyNjkwMzk2XzUu/anBn
+230,Nagarjuna Akkineni,NULL
+231,Madhuri Dixit,https://imgs.search.brave.com/Jxfn-VWEH5vl58raMHFBs422gi04c9vCirYiE9c_x3k/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvODcy/NzA1NzIwL3Bob3Rv/L211bWJhaS1tYWhh/cmFzaHRyYS1pbmRp/YS1pbmRpYW4tZmls/bS1hY3RyZXNzLWFu/ZC11bmljZWYtZ29v/ZHdpbGwtYWR2b2Nh/dGUtbWFkaHVyaS1k/aXhpdC5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9dGhzcVdT/MFhkcW85d3Nla2RS/XzVWSHVNU0xya2dH/WDQ1eWdNblJGVF96/OD0
+232,Aditya Roy Kapoor,NULL
+233,Kalki K.,NULL
+234,Evelyn Sharma,NULL
+235,Farooq Shaikh,NULL
+236,Malhar Thakar,NULL
+237,Yash Soni,NULL
+238,Mitra Gadhvi,NULL
+239,Aarjav Trivedi,NULL
+240,Janki Bodiwala,NULL
+241,Kinjal Rajpriya,NULL
+242,Rahul Rawal,NULL
+243,Netri Trivedi,NULL
+244,Mayur Chauhan,NULL
+245,Prapti Ajwalia,NULL
+246,Kumpal Patel,NULL
+247,Jay Bhatt,NULL
+248,,NULL
+249,,NULL
+250,,NULL
+251,,NULL
+252,,NULL
+253,,NULL
+254,,NULL
+255,,NULL
+256,,NULL
+257,,NULL
+258,,NULL
+259,,NULL
+260,,NULL
+261,,NULL
+262,,NULL
+263,,NULL
+264,,NULL
+265,,NULL
+266,,NULL
+267,,NULL
+268,,NULL
+269,,NULL
+270,,NULL
+271,,NULL
+272,,NULL
+273,,NULL
+274,,NULL
+275,,NULL
+276,,NULL
+277,,NULL
+278,,NULL
+279,,NULL
+280,,NULL
+281,,NULL
+282,,NULL
+283,,NULL
+284,,NULL
+285,,NULL
+286,,NULL
+287,,NULL
+288,,NULL
+289,,NULL
+290,,NULL
+291,,NULL
+292,,NULL
+293,,NULL
+294,,NULL
+295,,NULL
+296,,NULL
+297,,NULL
+298,,NULL
+299,,NULL
+300,,NULL
+301,,NULL
+302,,NULL
+303,,NULL
+304,,NULL
+305,,NULL
+306,,NULL
+307,,NULL
+308,,NULL
+309,,NULL
+310,,NULL
+311,,NULL
+312,,NULL
+313,,NULL
+314,,NULL
+315,,NULL
+316,,NULL
+317,,NULL
+318,,NULL
+319,,NULL
+320,,NULL
+321,,NULL
+322,,NULL
+323,,NULL
+324,,NULL
+325,,NULL
+326,,NULL
+327,,NULL
+328,,NULL
+329,,NULL
+330,,NULL
+331,,NULL
+332,,NULL
+333,,NULL
+334,,NULL
+335,,NULL
+336,,NULL
+337,,NULL
+338,,NULL
+339,,NULL
+340,,NULL
+341,,NULL
+342,,NULL
+343,,NULL
+344,,NULL
+345,,NULL
+346,,NULL
+347,,NULL
+348,,NULL
+349,,NULL
+350,,NULL
+351,,NULL

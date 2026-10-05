@@ -41,7 +41,7 @@ function Profile() {
                         </h1>
 
                         <p className="profile-subtitle">
-                            Manage your MovieAI account
+                            Manage your MovieFlick account
                         </p>
 
                     </div>

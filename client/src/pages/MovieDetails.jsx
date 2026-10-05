@@ -11,10 +11,13 @@ import {
     Smile,
     Frown,
     Meh,
-    Bot
+    Bot,
+    UserRound,
+    Sparkles
 } from "lucide-react";
 
 import MainLayout from "../layouts/MainLayout";
+import MovieCard from "../components/MovieCard/MovieCard";
 import { useAuth } from "../context/AuthContext";
 import "./MovieDetails.css";
 
@@ -40,9 +43,16 @@ function MovieDetails() {
     const [editingReviewText, setEditingReviewText] = useState("");
     const [reviewActionLoading, setReviewActionLoading] = useState(false);
 
+    const [recommendations, setRecommendations] = useState([]);
+    const [recommendationsLoading, setRecommendationsLoading] = useState(true);
+    const [recommendationsError, setRecommendationsError] = useState("");
+
     useEffect(() => {
         async function fetchMovie() {
             try {
+                setLoading(true);
+                setError("");
+
                 const response = await fetch(
                     `http://localhost:5000/api/movies/${id}`
                 );
@@ -63,6 +73,44 @@ function MovieDetails() {
         }
 
         fetchMovie();
+    }, [id]);
+
+    useEffect(() => {
+        async function fetchRecommendations() {
+            try {
+                setRecommendationsLoading(true);
+                setRecommendationsError("");
+
+                const response = await fetch(
+                    `http://localhost:5000/api/recommendations/${id}?limit=10`
+                );
+
+                if (!response.ok) {
+                    throw new Error(
+                        "Failed to fetch recommendations."
+                    );
+                }
+
+                const data = await response.json();
+
+                setRecommendations(
+                    data.recommendations || []
+                );
+            } catch (err) {
+                console.error(
+                    "Error fetching recommendations:",
+                    err
+                );
+
+                setRecommendationsError(
+                    "Unable to load recommendations."
+                );
+            } finally {
+                setRecommendationsLoading(false);
+            }
+        }
+
+        fetchRecommendations();
     }, [id]);
 
     useEffect(() => {
@@ -582,7 +630,8 @@ function MovieDetails() {
                 style={{
                     backgroundImage:
                         movie.backdrop_url &&
-                            movie.backdrop_url !== "NA"
+                            movie.backdrop_url !== "NA" &&
+                            movie.backdrop_url !== "NULL"
                             ? `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('${movie.backdrop_url}')`
                             : "none",
                     backgroundSize: "cover",
@@ -590,473 +639,623 @@ function MovieDetails() {
                 }}
             >
                 <div className="movie-details-container">
+                    <div className="movie-details-top">
 
-                    <img
-                        className="movie-details-poster"
-                        src={
-                            movie.poster_url &&
-                                movie.poster_url !== "NA"
-                                ? movie.poster_url
-                                : "https://via.placeholder.com/300x450?text=No+Poster"
-                        }
-                        alt={movie.title}
-                        onError={(e) => {
-                            e.target.onerror = null;
-                            e.target.src =
-                                "https://via.placeholder.com/300x450?text=No+Poster";
-                        }}
-                    />
-
-                    <div className="movie-details-content">
-
-                        <h1 className="movie-details-title">
-                            {movie.title}
-                        </h1>
-
-                        {movie.tagline && (
-                            <p className="movie-details-tagline">
-                                {movie.tagline}
-                            </p>
+                        {movie.title === "Love Ni Bhavai" ? (
+                            <div
+                                style={{
+                                    width: "280px",
+                                    height: "410px",
+                                    flexShrink: 0,
+                                    borderRadius: "var(--radius)",
+                                    overflow: "hidden",
+                                    boxShadow: "0 6px 18px rgba(0, 0, 0, 0.14)"
+                                }}
+                            >
+                                <img
+                                    className="movie-details-poster"
+                                    src={
+                                        movie.poster_url &&
+                                            movie.poster_url !== "NA" &&
+                                            movie.poster_url !== "NULL"
+                                            ? movie.poster_url
+                                            : "https://via.placeholder.com/300x450?text=No+Poster"
+                                    }
+                                    alt={movie.title}
+                                    style={{ width: "100%", height: "100%", transform: "scale(1.06)", boxShadow: "none" }}
+                                    onError={(e) => {
+                                        e.target.onerror = null;
+                                        e.target.src =
+                                            "https://via.placeholder.com/300x450?text=No+Poster";
+                                    }}
+                                />
+                            </div>
+                        ) : (
+                            <img
+                                className="movie-details-poster"
+                                src={
+                                    movie.poster_url &&
+                                        movie.poster_url !== "NA" &&
+                                        movie.poster_url !== "NULL"
+                                        ? movie.poster_url
+                                        : "https://via.placeholder.com/300x450?text=No+Poster"
+                                }
+                                alt={movie.title}
+                                onError={(e) => {
+                                    e.target.onerror = null;
+                                    e.target.src =
+                                        "https://via.placeholder.com/300x450?text=No+Poster";
+                                }}
+                            />
                         )}
 
-                        <p className="movie-details-rating">
-                            ⭐ {movie.imdb_rating}
-                        </p>
+                        <div className="movie-details-content">
 
-                        <p className="movie-details-meta">
-                            {formatReleaseDate(
-                                movie.release_date
+                            <h1 className="movie-details-title">
+                                {movie.title}
+                            </h1>
+
+                            {movie.tagline && (
+                                <p className="movie-details-tagline">
+                                    {movie.tagline}
+                                </p>
                             )}
-                            {" • "}
-                            {formatRuntime(movie.runtime)}
-                        </p>
 
-                        <p className="movie-details-description">
-                            {movie.description}
-                        </p>
+                            <p className="movie-details-rating">
+                                ⭐ {movie.imdb_rating} {movie.imdb_votes ? <span style={{ color: "#000000", fontSize: "15px", fontWeight: "600", marginLeft: "10px", opacity: 0.85 }}>({new Intl.NumberFormat('en-IN').format(movie.imdb_votes)} votes)</span> : ""}
+                            </p>
 
-                        {user && (
-                            <div className="movie-details-actions">
+                            <p className="movie-details-meta">
+                                {formatReleaseDate(
+                                    movie.release_date
+                                )}
+                                {" • "}
+                                {formatRuntime(movie.runtime)}
+                            </p>
 
-                                <button
-                                    className={`movie-action-button favorite-btn ${isFavorite
-                                        ? "active"
-                                        : ""
-                                        }`}
-                                    onClick={handleFavorite}
-                                    disabled={actionLoading}
-                                    title={
-                                        isFavorite
-                                            ? "Remove from Favorites"
-                                            : "Add to Favorites"
-                                    }
-                                    aria-label={
-                                        isFavorite
-                                            ? "Remove from Favorites"
-                                            : "Add to Favorites"
-                                    }
-                                >
-                                    <Heart
-                                        size={24}
-                                        strokeWidth={2}
-                                        fill={
-                                            isFavorite
-                                                ? "currentColor"
-                                                : "none"
-                                        }
-                                    />
-                                </button>
-
-                                <button
-                                    className={`movie-action-button watchlist-btn ${isInWatchlist
-                                        ? "active"
-                                        : ""
-                                        }`}
-                                    onClick={handleWatchlist}
-                                    disabled={actionLoading}
-                                    title={
-                                        isInWatchlist
-                                            ? "Remove from Watchlist"
-                                            : "Add to Watchlist"
-                                    }
-                                    aria-label={
-                                        isInWatchlist
-                                            ? "Remove from Watchlist"
-                                            : "Add to Watchlist"
-                                    }
-                                >
-                                    <Bookmark
-                                        size={24}
-                                        strokeWidth={2}
-                                        fill={
-                                            isInWatchlist
-                                                ? "currentColor"
-                                                : "none"
-                                        }
-                                    />
-                                </button>
-
-                            </div>
-                        )}
-
-                        <div className="movie-details-section">
-
-                            <h3>Genres</h3>
-
-                            <div className="movie-details-list">
-                                {movie.genres.map((genre) => (
-                                    <span
-                                        className="movie-details-item"
-                                        key={genre.genre_id}
-                                    >
-                                        {genre.genre_name}
-                                    </span>
-                                ))}
-                            </div>
-
-                        </div>
-
-                        <div className="movie-details-section">
-
-                            <h3>Languages</h3>
-
-                            <div className="movie-details-list">
-                                {movie.languages.map((language) => (
-                                    <span
-                                        className="movie-details-item"
-                                        key={language.language_id}
-                                    >
-                                        {language.language_name}
-                                    </span>
-                                ))}
-                            </div>
-
-                        </div>
-
-                        <div className="movie-details-section">
-
-                            <h3>Director</h3>
-
-                            <div className="movie-details-list">
-                                {movie.directors.map((director) => (
-                                    <span
-                                        className="movie-details-item"
-                                        key={director.director_id}
-                                    >
-                                        {director.director_name}
-                                    </span>
-                                ))}
-                            </div>
-
-                        </div>
-
-                        {movie.trailers.length > 0 && (
-                            <div className="movie-details-section">
-
-                                <h3>Trailers</h3>
-
-                                {movie.trailers.map((trailer) => (
-                                    <div
-                                        key={trailer.trailer_id}
-                                    >
-                                        <a
-                                            className="movie-details-trailer"
-                                            href={trailer.video_url}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                        >
-                                            <Play
-                                                size={16}
-                                                strokeWidth={2}
-                                                fill="currentColor"
-                                            />
-
-                                            <span>
-                                                {trailer.title ||
-                                                    "Watch Trailer"}
-                                            </span>
-                                        </a>
-                                    </div>
-                                ))}
-
-                            </div>
-                        )}
-
-                        <div className="movie-details-section reviews-section">
-
-                            <h3>Reviews</h3>
+                            <p className="movie-details-description">
+                                {movie.description}
+                            </p>
 
                             {user && (
-                                <form
-                                    className="review-form"
-                                    onSubmit={handleReviewSubmit}
-                                >
-                                    <textarea
-                                        className="review-input"
-                                        value={reviewText}
-                                        onChange={(event) =>
-                                            setReviewText(
-                                                event.target.value
-                                            )
-                                        }
-                                        placeholder="Write your review..."
-                                        rows="5"
-                                    />
-
+                                <div className="movie-details-actions">
                                     <button
-                                        type="submit"
-                                        className="review-submit-button"
-                                        disabled={
-                                            reviewSubmitting
+                                        className={`movie-action-button favorite-btn ${isFavorite
+                                            ? "active"
+                                            : ""
+                                            }`}
+                                        onClick={handleFavorite}
+                                        disabled={actionLoading}
+                                        title={
+                                            isFavorite
+                                                ? "Remove from Favorites"
+                                                : "Add to Favorites"
+                                        }
+                                        aria-label={
+                                            isFavorite
+                                                ? "Remove from Favorites"
+                                                : "Add to Favorites"
                                         }
                                     >
-                                        {reviewSubmitting
-                                            ? "Analyzing & Submitting..."
-                                            : "Submit Review"}
+                                        <Heart
+                                            size={24}
+                                            strokeWidth={2}
+                                            fill={
+                                                isFavorite
+                                                    ? "currentColor"
+                                                    : "none"
+                                            }
+                                        />
                                     </button>
 
-                                    {reviewError && (
+                                    <button
+                                        className={`movie-action-button watchlist-btn ${isInWatchlist
+                                            ? "active"
+                                            : ""
+                                            }`}
+                                        onClick={handleWatchlist}
+                                        disabled={actionLoading}
+                                        title={
+                                            isInWatchlist
+                                                ? "Remove from Watchlist"
+                                                : "Add to Watchlist"
+                                        }
+                                        aria-label={
+                                            isInWatchlist
+                                                ? "Remove from Watchlist"
+                                                : "Add to Watchlist"
+                                        }
+                                    >
+                                        <Bookmark
+                                            size={24}
+                                            strokeWidth={2}
+                                            fill={
+                                                isInWatchlist
+                                                    ? "currentColor"
+                                                    : "none"
+                                            }
+                                        />
+                                    </button>
+                                </div>
+                            )}
+
+                            <div className="movie-details-section">
+                                <h3>Genres</h3>
+
+                                <div className="movie-details-list">
+                                    {movie.genres.map((genre) => (
+                                        <span
+                                            className="movie-details-item"
+                                            key={genre.genre_id}
+                                        >
+                                            {genre.genre_name}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="movie-details-section">
+                                <h3>Languages</h3>
+
+                                <div className="movie-details-list">
+                                    {movie.languages.map((language) => (
+                                        <span
+                                            className="movie-details-item"
+                                            key={language.language_id}
+                                        >
+                                            {language.language_name}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="movie-details-section">
+                                <h3>Director</h3>
+
+                                <div className="movie-details-list">
+                                    {movie.directors.map((director) => (
+                                        <span
+                                            className="movie-details-item"
+                                            key={director.director_id}
+                                        >
+                                            {director.director_name}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="movie-details-section cast-section">
+                                <h3>Cast</h3>
+
+                                {movie.cast && movie.cast.length > 0 ? (
+                                    <div className="cast-grid">
+                                        {movie.cast.map((actor) => (
+                                            <div
+                                                className="cast-card"
+                                                key={`${actor.actor_id}-${actor.cast_order}`}
+                                            >
+                                                <div className="cast-image-wrapper">
+                                                    {actor.profile_url &&
+                                                        actor.profile_url !== "NA" &&
+                                                        actor.profile_url !== "NULL" ? (
+                                                        <>
+                                                            <img
+                                                                className="cast-image"
+                                                                src={actor.profile_url}
+                                                                alt={actor.actor_name}
+                                                                onError={(e) => {
+                                                                    e.target.style.display = "none";
+
+                                                                    if (
+                                                                        e.target.nextSibling
+                                                                    ) {
+                                                                        e.target.nextSibling.style.display =
+                                                                            "flex";
+                                                                    }
+                                                                }}
+                                                            />
+
+                                                            <div
+                                                                className="cast-image-fallback"
+                                                                style={{
+                                                                    display: "none"
+                                                                }}
+                                                            >
+                                                                <UserRound
+                                                                    size={34}
+                                                                    strokeWidth={1.7}
+                                                                />
+                                                            </div>
+                                                        </>
+                                                    ) : (
+                                                        <div className="cast-image-fallback">
+                                                            <UserRound
+                                                                size={34}
+                                                                strokeWidth={1.7}
+                                                            />
+                                                        </div>
+                                                    )}
+                                                </div>
+
+                                                <div className="cast-content">
+                                                    <h4 className="cast-actor-name">
+                                                        {actor.actor_name}
+                                                    </h4>
+
+                                                    {actor.character_name && (
+                                                        <p className="cast-character">
+                                                            {actor.character_name}
+                                                        </p>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <p>
+                                        Cast details/data will be available soon, stay tuned!
+                                    </p>
+                                )}
+                            </div>
+
+                            {movie.trailers.length > 0 && (
+                                <div className="movie-details-section">
+                                    <h3>Trailers</h3>
+
+                                    {movie.trailers.map((trailer) => (
+                                        <div key={trailer.trailer_id}>
+                                            <a
+                                                className="movie-details-trailer"
+                                                href={trailer.video_url}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                            >
+                                                <Play
+                                                    size={16}
+                                                    strokeWidth={2}
+                                                    fill="currentColor"
+                                                />
+
+                                                <span>
+                                                    {trailer.title ||
+                                                        "Watch Trailer"}
+                                                </span>
+                                            </a>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+
+                            <div className="movie-details-section reviews-section">
+                                <h3>Reviews</h3>
+
+                                {user && (
+                                    <form
+                                        className="review-form"
+                                        onSubmit={handleReviewSubmit}
+                                    >
+                                        <textarea
+                                            className="review-input"
+                                            value={reviewText}
+                                            onChange={(event) =>
+                                                setReviewText(
+                                                    event.target.value
+                                                )
+                                            }
+                                            placeholder="Write your review..."
+                                            rows="5"
+                                        />
+
+                                        <button
+                                            type="submit"
+                                            className="review-submit-button"
+                                            disabled={
+                                                reviewSubmitting
+                                            }
+                                        >
+                                            {reviewSubmitting
+                                                ? "Analyzing & Submitting..."
+                                                : "Submit Review"}
+                                        </button>
+
+                                        {reviewError && (
+                                            <p className="review-error">
+                                                {reviewError}
+                                            </p>
+                                        )}
+                                    </form>
+                                )}
+
+                                {!user && (
+                                    <p
+                                        className="review-login-message"
+                                        style={{
+                                            paddingBottom: "24px",
+                                            marginBottom: "32px"
+                                        }}
+                                    >
+                                        Please login to write a review.
+                                    </p>
+                                )}
+
+                                {reviewsLoading && (
+                                    <p>Loading reviews...</p>
+                                )}
+
+                                {!reviewsLoading &&
+                                    reviewError &&
+                                    !user && (
                                         <p className="review-error">
                                             {reviewError}
                                         </p>
                                     )}
-                                </form>
-                            )}
 
-                            {!user && (
-                                <p className="review-login-message">
-                                    Please login to write a review.
-                                </p>
-                            )}
+                                {!reviewsLoading &&
+                                    !reviewError &&
+                                    reviews.length === 0 && (
+                                        <p className="review-empty">
+                                            No reviews yet.
+                                        </p>
+                                    )}
 
-                            {reviewsLoading && (
-                                <p>Loading reviews...</p>
-                            )}
+                                {!reviewsLoading &&
+                                    reviews.length > 0 && (
+                                        <div className="reviews-list">
+                                            {reviews.map((review) => (
+                                                <div
+                                                    className="review-card"
+                                                    key={review.review_id}
+                                                >
+                                                    <div className="review-header">
+                                                        <div>
+                                                            <strong>
+                                                                {
+                                                                    review.full_name
+                                                                }
+                                                            </strong>
 
-                            {!reviewsLoading &&
-                                reviewError &&
-                                !user && (
-                                    <p className="review-error">
-                                        {reviewError}
-                                    </p>
-                                )}
-
-                            {!reviewsLoading &&
-                                !reviewError &&
-                                reviews.length === 0 && (
-                                    <p className="review-empty">
-                                        No reviews yet.
-                                    </p>
-                                )}
-
-                            {!reviewsLoading &&
-                                reviews.length > 0 && (
-                                    <div className="reviews-list">
-
-                                        {reviews.map((review) => (
-                                            <div
-                                                className="review-card"
-                                                key={review.review_id}
-                                            >
-
-                                                <div className="review-header">
-
-                                                    <div>
-                                                        <strong>
-                                                            {
-                                                                review.full_name
-                                                            }
-                                                        </strong>
-
-                                                        <span>
-                                                            {" • "}
-                                                            {
-                                                                formatReviewDate(
-                                                                    review.created_at
-                                                                )
-                                                            }
-                                                        </span>
-                                                    </div>
-
-                                                    {user &&
-                                                        Number(
-                                                            user.user_id
-                                                        ) ===
-                                                        Number(
-                                                            review.user_id
-                                                        ) && (
-                                                            <div className="review-actions">
-
-                                                                {editingReviewId !==
-                                                                    review.review_id && (
-                                                                        <>
-                                                                            <button
-                                                                                type="button"
-                                                                                className="review-icon-button review-edit-button"
-                                                                                onClick={() =>
-                                                                                    handleEditReview(
-                                                                                        review
-                                                                                    )
-                                                                                }
-                                                                                disabled={
-                                                                                    reviewActionLoading
-                                                                                }
-                                                                                title="Edit review"
-                                                                                aria-label="Edit review"
-                                                                            >
-                                                                                <Pencil
-                                                                                    size={16}
-                                                                                    strokeWidth={2}
-                                                                                />
-                                                                            </button>
-
-                                                                            <button
-                                                                                type="button"
-                                                                                className="review-icon-button review-delete-button"
-                                                                                onClick={() =>
-                                                                                    handleDeleteReview(
-                                                                                        review.review_id
-                                                                                    )
-                                                                                }
-                                                                                disabled={
-                                                                                    reviewActionLoading
-                                                                                }
-                                                                                title="Delete review"
-                                                                                aria-label="Delete review"
-                                                                            >
-                                                                                <Trash2
-                                                                                    size={16}
-                                                                                    strokeWidth={2}
-                                                                                />
-                                                                            </button>
-                                                                        </>
-                                                                    )}
-
-                                                            </div>
-                                                        )}
-
-                                                </div>
-
-                                                {editingReviewId ===
-                                                    review.review_id ? (
-                                                    <div className="review-edit-form">
-
-                                                        <textarea
-                                                            className="review-input"
-                                                            value={
-                                                                editingReviewText
-                                                            }
-                                                            onChange={(
-                                                                event
-                                                            ) =>
-                                                                setEditingReviewText(
-                                                                    event.target.value
-                                                                )
-                                                            }
-                                                            rows="5"
-                                                        />
-
-                                                        <div className="review-edit-actions">
-
-                                                            <button
-                                                                type="button"
-                                                                className="review-save-button"
-                                                                onClick={() =>
-                                                                    handleUpdateReview(
-                                                                        review.review_id
+                                                            <span>
+                                                                {" • "}
+                                                                {
+                                                                    formatReviewDate(
+                                                                        review.created_at
                                                                     )
                                                                 }
-                                                                disabled={
-                                                                    reviewActionLoading
-                                                                }
-                                                                title="Save changes"
-                                                            >
-                                                                <Save
-                                                                    size={16}
-                                                                    strokeWidth={2}
-                                                                />
-
-                                                                <span>
-                                                                    {reviewActionLoading
-                                                                        ? "Analyzing & Saving..."
-                                                                        : "Save Changes"}
-                                                                </span>
-                                                            </button>
-
-                                                            <button
-                                                                type="button"
-                                                                className="review-cancel-button"
-                                                                onClick={
-                                                                    handleCancelEdit
-                                                                }
-                                                                disabled={
-                                                                    reviewActionLoading
-                                                                }
-                                                                title="Cancel editing"
-                                                            >
-                                                                <X
-                                                                    size={16}
-                                                                    strokeWidth={2}
-                                                                />
-
-                                                                <span>
-                                                                    Cancel
-                                                                </span>
-                                                            </button>
-
+                                                            </span>
                                                         </div>
 
-                                                    </div>
-                                                ) : (
-                                                    <>
-                                                        <p className="review-text">
-                                                            {
-                                                                review.review_text
-                                                            }
-                                                        </p>
+                                                        {user &&
+                                                            Number(
+                                                                user.user_id
+                                                            ) ===
+                                                            Number(
+                                                                review.user_id
+                                                            ) && (
+                                                                <div className="review-actions">
+                                                                    {editingReviewId !==
+                                                                        review.review_id && (
+                                                                            <>
+                                                                                <button
+                                                                                    type="button"
+                                                                                    className="review-icon-button review-edit-button"
+                                                                                    onClick={() =>
+                                                                                        handleEditReview(
+                                                                                            review
+                                                                                        )
+                                                                                    }
+                                                                                    disabled={
+                                                                                        reviewActionLoading
+                                                                                    }
+                                                                                    title="Edit review"
+                                                                                    aria-label="Edit review"
+                                                                                >
+                                                                                    <Pencil
+                                                                                        size={16}
+                                                                                        strokeWidth={2}
+                                                                                    />
+                                                                                </button>
 
-                                                        {review.sentiment && (
-                                                            <div
-                                                                className={`review-sentiment sentiment-${review.sentiment.toLowerCase()}`}
-                                                            >
-                                                                <span className="sentiment-label">
-                                                                    {getSentimentIcon(
-                                                                        review.sentiment
-                                                                    )}
+                                                                                <button
+                                                                                    type="button"
+                                                                                    className="review-icon-button review-delete-button"
+                                                                                    onClick={() =>
+                                                                                        handleDeleteReview(
+                                                                                            review.review_id
+                                                                                        )
+                                                                                    }
+                                                                                    disabled={
+                                                                                        reviewActionLoading
+                                                                                    }
+                                                                                    title="Delete review"
+                                                                                    aria-label="Delete review"
+                                                                                >
+                                                                                    <Trash2
+                                                                                        size={16}
+                                                                                        strokeWidth={2}
+                                                                                    />
+                                                                                </button>
+                                                                            </>
+                                                                        )}
+                                                                </div>
+                                                            )}
+                                                    </div>
+
+                                                    {editingReviewId ===
+                                                        review.review_id ? (
+                                                        <div className="review-edit-form">
+                                                            <textarea
+                                                                className="review-input"
+                                                                value={
+                                                                    editingReviewText
+                                                                }
+                                                                onChange={(
+                                                                    event
+                                                                ) =>
+                                                                    setEditingReviewText(
+                                                                        event.target.value
+                                                                    )
+                                                                }
+                                                                rows="5"
+                                                            />
+
+                                                            <div className="review-edit-actions">
+                                                                <button
+                                                                    type="button"
+                                                                    className="review-save-button"
+                                                                    onClick={() =>
+                                                                        handleUpdateReview(
+                                                                            review.review_id
+                                                                        )
+                                                                    }
+                                                                    disabled={
+                                                                        reviewActionLoading
+                                                                    }
+                                                                    title="Save changes"
+                                                                >
+                                                                    <Save
+                                                                        size={16}
+                                                                        strokeWidth={2}
+                                                                    />
 
                                                                     <span>
-                                                                        {
-                                                                            review.sentiment
-                                                                        }
+                                                                        {reviewActionLoading
+                                                                            ? "Analyzing & Saving..."
+                                                                            : "Save Changes"}
                                                                     </span>
-                                                                </span>
+                                                                </button>
 
-                                                                {formatSentimentScore(
-                                                                    review.sentiment_score
-                                                                ) !== null && (
-                                                                        <span className="sentiment-score">
-                                                                            Score:{" "}
+                                                                <button
+                                                                    type="button"
+                                                                    className="review-cancel-button"
+                                                                    onClick={
+                                                                        handleCancelEdit
+                                                                    }
+                                                                    disabled={
+                                                                        reviewActionLoading
+                                                                    }
+                                                                    title="Cancel editing"
+                                                                >
+                                                                    <X
+                                                                        size={16}
+                                                                        strokeWidth={2}
+                                                                    />
+
+                                                                    <span>
+                                                                        Cancel
+                                                                    </span>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    ) : (
+                                                        <>
+                                                            <p className="review-text">
+                                                                {
+                                                                    review.review_text
+                                                                }
+                                                            </p>
+
+                                                            {review.sentiment && (
+                                                                <div
+                                                                    className={`review-sentiment sentiment-${review.sentiment.toLowerCase()}`}
+                                                                >
+                                                                    <span className="sentiment-label">
+                                                                        {getSentimentIcon(
+                                                                            review.sentiment
+                                                                        )}
+
+                                                                        <span>
                                                                             {
-                                                                                formatSentimentScore(
-                                                                                    review.sentiment_score
-                                                                                )
+                                                                                review.sentiment
                                                                             }
                                                                         </span>
-                                                                    )}
-                                                            </div>
-                                                        )}
-                                                    </>
-                                                )}
+                                                                    </span>
 
-                                            </div>
-                                        ))}
+                                                                    {formatSentimentScore(
+                                                                        review.sentiment_score
+                                                                    ) !== null && (
+                                                                            <span className="sentiment-score">
+                                                                                Score:{" "}
+                                                                                {
+                                                                                    formatSentimentScore(
+                                                                                        review.sentiment_score
+                                                                                    )
+                                                                                }
+                                                                            </span>
+                                                                        )}
+                                                                </div>
+                                                            )}
+                                                        </>
+                                                    )}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                            </div>
+                        </div>
+                    </div>
 
-                                    </div>
-                                )}
+                    <div className="movie-details-section recommendations-section">
+                        <div className="recommendations-heading">
+                            <div>
+                                <h3>Recommended For You</h3>
+                                <p>
+                                    Movies with similar content, genres, people and characters
+                                </p>
+                            </div>
 
+                            <Sparkles
+                                size={22}
+                                strokeWidth={1.8}
+                            />
                         </div>
 
+                        {recommendationsLoading && (
+                            <div className="recommendations-status">
+                                <p>
+                                    Finding movies you may like...
+                                </p>
+                            </div>
+                        )}
+
+                        {!recommendationsLoading &&
+                            recommendationsError && (
+                                <div className="recommendations-status">
+                                    <p>
+                                        {recommendationsError}
+                                    </p>
+                                </div>
+                            )}
+
+                        {!recommendationsLoading &&
+                            !recommendationsError &&
+                            recommendations.length === 0 && (
+                                <div className="recommendations-status">
+                                    <p>
+                                        No recommendations available yet.
+                                    </p>
+                                </div>
+                            )}
+
+                        {!recommendationsLoading &&
+                            !recommendationsError &&
+                            recommendations.length > 0 && (
+                                <div className="recommendations-grid">
+                                    {recommendations.map(
+                                        (recommendedMovie) => (
+                                            <MovieCard
+                                                key={
+                                                    recommendedMovie.movie_id
+                                                }
+                                                movie={
+                                                    recommendedMovie
+                                                }
+                                            />
+                                        )
+                                    )}
+                                </div>
+                            )}
                     </div>
+
                 </div>
             </div>
         </MainLayout>

@@ -103,7 +103,7 @@ function Register() {
                     </h1>
 
                     <p className="register-subtitle">
-                        Join MovieAI and discover your next movie
+                        Join MovieFlick and discover your next movie
                     </p>
 
                 </div>
@@ -233,8 +233,8 @@ function Register() {
 
                         <div
                             className={`register-input-wrapper ${passwordError
-                                    ? "password-mismatch"
-                                    : ""
+                                ? "password-mismatch"
+                                : ""
                                 }`}
                         >
 

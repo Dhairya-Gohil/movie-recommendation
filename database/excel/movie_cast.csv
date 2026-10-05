@@ -1,64 +1,360 @@
-﻿movie_id,actor_id,character_name,cast_order,,,,,,,,
-1,1,Hamza Ali Mazari / Jaskirat Singh Rangi,1,,,,,,,,
-1,2,Rehman Dakait,2,,,,,,,,
-1,3,S.P. Choudhary Aslam,3,,,,,,,,
-1,4,Major Iqbal,4,,,,,,,,
-1,5,Ajay Sanyal,5,,,,,,,,
-1,6,Yalina Jamali,6,,,,,,,,
-1,7,Jameel Jamali,7,,,,,,,,
-1,8,Uzair Baloch,8,,,,,,,,
-1,9,Ulfat (Rehman's Wife),9,,,,,,,,
-2,1,Hamza Ali Mazari / Jaskirat Singh Rangi,1,,,,,,,,
-2,2,Rehman Dakait,2,,,,,,,,
-2,3,S.P. Choudhary Aslam,3,,,,,,,,
-2,4,Major Iqbal,4,,,,,,,,
-2,5,Ajay Sanyal,5,,,,,,,,
-2,6,Yalina Jamali,6,,,,,,,,
-2,7,Jameel Jamali,7,,,,,,,,
-2,8,Uzair Baloch,8,,,,,,,,
-2,9,Ulfat (Rehman's Wife),9,,,,,,,,
-2,10,Saziya Bano,10,,,,,,,,
-3,11,Rocky,1,,,,,,,,
-3,12,Reena,2,,,,,,,,
-3,13,Garuda,3,,,,,,,,
-3,14,Anand Ingalgi,4,,,,,,,,
-4,11,Rocky,1,,,,,,,,
-4,12,Reena,2,,,,,,,,
-4,3,Adheera,3,,,,,,,,
-4,15,Ramika Sen,4,,,,,,,,
-4,16,Kanneganti Raghavan,5,,,,,,,,
-4,17,Vijayendra Ingalgi,6,,,,,,,,
-5,18,Salaar,1,,,,,,,,
-5,19,Vardharaja Mannaar,2,,,,,,,,
-5,20,Aadhya,3,,,,,,,,
-5,21,Rajamannaar,4,,,,,,,,
-5,22,Deva's Mother,5,,,,,,,,
-6,23,Marco,1,,,,,,,,mirai
-6,24,George D'Peter,2,,,,,,,,saiyaara
-6,25,Tony Issac,3,,,,,,,,lokah
-6,26,Russell Issac,4,,,,,,,,stree
-6,27,Cyrus Issac,5,,,,,,,,
-6,28,Victor D'Peter,6,,,,,,,,
-6,29,Maria,7,,,,,,,,
-7,30,Veda Prajapati,1,,,,,,,,
-7,21,Angamballi,2,,,,,,,,
-7,31,Ambika Prajapati,3,,,,,,,,
-7,32,Vibha,4,,,,,,,,
-7,33,Black Sword,5,,,,,,,,
-8,34,Vaani Batra,1,,,,,,,,
-8,35,Krish Kapoor,2,,,,,,,,
-8,36,Shaad Randhawa,3,,,,,,,,
-8,37,Mr. Rajesh Batra,4,,,,,,,,
-8,38,Mrs. Geeta Batra,5,,,,,,,,
-8,39,Ashok Kapoor,6,,,,,,,,
-9,40,Chandra,1,,,,,,,,
-9,41,Sunny,2,,,,,,,,
-9,42,Inspector,3,,,,,,,,
-9,43,Chathan,4,,,,,,,,
-9,44,Naijil,5,,,,,,,,
-9,45,Venu,6,,,,,,,,
-10,46,Vicky,1,,,,,,,,
-10,47,Girl With No Name,2,,,,,,,,
-10,48,Rudra,3,,,,,,,,
-10,49,Jana,4,,,,,,,,
-10,50,Bittu,5,,,,,,,,
+﻿movie_id,actor_id,character_name,cast_order
+1,1,Hamza Ali Mazari / Jaskirat Singh Rangi,1
+1,2,Rehman Dakait,2
+1,3,S.P. Choudhary Aslam,3
+1,4,Major Iqbal,4
+1,5,Ajay Sanyal,5
+1,6,Yalina Jamali,6
+1,7,Jameel Jamali,7
+1,8,Ulfat (Rehman's Wife),8
+1,9,Uzair Baloch,9
+2,1,Hamza Ali Mazari / Jaskirat Singh Rangi,1
+2,2,Rehman Dakait,2
+2,3,S.P. Choudhary Aslam,3
+2,4,Major Iqbal,4
+2,5,Ajay Sanyal,5
+2,6,Yalina Jamali,6
+2,7,Jameel Jamali,7
+2,8,Ulfat (Rehman's Wife),8
+2,10,Saziya Bano,9
+2,9,Uzair Baloch,10
+3,11,Rocky,1
+3,12,Reena,2
+3,13,Garuda,3
+3,14,Anand Ingalgi,4
+4,11,Rocky,1
+4,12,Reena,2
+4,3,Adheera,3
+4,15,Ramika Sen,4
+4,16,Kanneganti Raghavan,5
+4,17,Vijayendra Ingalgi,6
+5,18,Salaar,1
+5,19,Vardharaja Mannaar,2
+5,20,Aadhya,3
+5,21,Rajamannaar,4
+5,22,Deva's Mother,5
+6,23,Marco,1
+6,24,George D'Peter,2
+6,25,Tony Issac,3
+6,26,Russell Issac,4
+6,27,Cyrus Issac,5
+6,28,Victor D'Peter,6
+6,29,Maria,7
+7,30,Veda Prajapati,1
+7,21,Angamballi,2
+7,31,Ambika Prajapati,3
+7,32,Vibha,4
+7,33,Black Sword,5
+8,34,Vaani Batra,1
+8,35,Krish Kapoor,2
+8,36,Shaad Randhawa,3
+8,37,Mr. Rajesh Batra,4
+8,38,Mrs. Geeta Batra,5
+8,39,Ashok Kapoor,6
+9,40,Chandra,1
+9,41,Sunny,2
+9,42,Inspector,3
+9,43,Chathan,4
+9,44,Naijil,5
+9,45,Venu,6
+10,46,Vicky,1
+10,47,Girl With No Name,2
+10,48,Rudra,3
+10,49,Jana (Janardhan),4
+10,50,Bittu,5
+11,46,Vicky,1
+11,47,Girl With No Name,2
+11,48,Rudra,3
+11,49,Jana (Janardhan),4
+11,50,Bittu,5
+11,51,Shama,6
+11,52,Bhaskar,7
+11,53,Sarkata,8
+11,54,Chitti,9
+12,52,Bhaskar,1
+12,55,Dr. Anika Mittal,2
+12,49,Jana (Janardhan),3
+12,57,Panda,4
+12,56,Jomin,5
+13,58,Alok Goyal,1
+13,59,Tadka,2
+13,60,Yakshasan,3
+13,61,Inspecter Yadav,4
+13,62,Ram Goyal,5
+13,38,Sudha Goyal,6
+13,52,Bhaskar,7
+14,63,Bittu,1
+14,64,Bela,2
+14,65,Rukku,3
+14,66,Pammi,4
+14,67,Elvis (Hand of God),5
+15,68,Arun Neelkandan,1
+15,40,Nithya Balagopal,2
+15,69,Darshana,3
+15,70,Kedar Kamlesh,4
+15,71,Maya,5
+15,72,Joe,6
+15,73,Nithya's Sister,7
+15,74,Selva,8
+15,75,Jimmy,9
+15,76,Antony,10
+16,18,"Shivudu, Baahubali",1
+16,77,Devsena,2
+16,51,Avantika,3
+16,67,Katappa,4
+16,78,Bhallaladeva,5
+16,79,Shivagami,6
+16,80,Bijjaladeva,7
+16,81,Kaalkeya,8
+17,18,"Shivudu, Baahubali",1
+17,77,Devsena,2
+17,51,Avantika,3
+17,67,Katappa,4
+17,78,Bhallaladeva,5
+17,82,Kumar Verma,6
+17,79,Shivagami,7
+17,80,Bijjaladeva,8
+17,81,Kaalkeya,9
+18,83,Arjun Acharya,1
+18,84,"Priya, Chitra",2
+18,85,Shantaram,3
+18,86,Meera,4
+18,119,Dushand Acharya,5
+18,143,Vasudev Acharya,6
+18,87,Bhali,7
+18,88,Yashodha,8
+18,89,Maharaj,9
+18,90,Vashishtha Guruji,10
+19,91,Sumati,1
+19,92,Bhaskhar,2
+19,93,Prahalad Kumar,3
+19,94,Vinod Bhosle,4
+19,95,Rajbeer Lokhande,5
+19,96,Samba,6
+19,97,CBI Officer,7
+19,98,Karthik,8
+19,99,Actress,9
+20,100,Hemant Shah,1
+20,101,Priya Patel Shah,2
+20,102,Hari Vyas,3
+20,103,Meera Rao,4
+20,104,Tara,5
+20,105,Mannu Malpani,6
+20,106,Rajesh Mishra,7
+20,107,Rana Sawant,8
+20,169,Ashok Mirchandani,9
+21,108,Kartika,1
+21,109,Gautam,2
+21,110,Ira,3
+21,111,Jaggi,4
+22,112,MS Dhoni,1
+22,113,Pan Singh,2
+22,114,Sakshi,3
+22,115,Priyanka,4
+22,116,Jayanti Gupta,5
+22,117,Yuvraj Singh,6
+22,118,Mr. Deval,7
+22,119,Keshav Banerjee,8
+22,120,Santosh Lal,9
+22,121,Satya Prakash,10
+22,122,Chittu Pal,11
+22,123,Sanjay Dadich,12
+22,124,Ritu,13
+22,125,Devika Devi,14
+23,126,Satyaprem,1
+23,114,Katha,2
+23,127,Sejal,3
+23,128,Rasna Kapadia,4
+23,129,Narayan Panchal,5
+23,130,Tapan Manek,6
+23,131,Diwali Ben,7
+23,132,Harikishen Kapadia,8
+24,133,Ranvijay Singh,1
+24,59,Geetanjali,2
+24,134,Zoya,3
+24,136,Balbir Singh,4
+24,135,Abrar Haque,5
+24,137,Abid ul Haque,6
+24,138,PK Mishra,7
+24,139,Reet Singh,8
+24,140,Asrar Haque,9
+25,92,Lt. Ram,1
+25,141,Sita,2
+25,59,Afreen,3
+25,116,Vaidehi Sharma,4
+25,142,Rekha Bharadwaj,5
+25,143,Akbar,6
+25,144,Shubramanyam,7
+25,145,Durjaya Sharma,8
+26,146,Harish Bhalla,1
+26,59,Tara,2
+26,147,Karan Bhalla,3
+26,148,Daisy Bhalla,4
+26,149,Gayatri Bhalla,5
+26,150,Nakul Bhalla,6
+26,151,Pandit Ji,7
+26,152,Delna,8
+26,153,Mudassar,9
+27,154,Chhatrapati Sambhaji ,1
+27,59,Yesubai Bhonsale,2
+27,155,Hambirrao Mohite,3
+27,156,Soyrabai,4
+27,157,Yesaji Kank,5
+27,2,Aurangzeb,6
+27,9,Ikhlas Khan,7
+27,159,Peshwa Neelopant,8
+28,18,Bhairava,1
+28,160,Sum 80,2
+28,115,Roxie,3
+28,161,Supreme Yaskin,4
+28,162,Arjun,5
+28,146,Ashvatthama,6
+28,141,Divya,7
+28,163,Kyra,8
+28,164,Uttara,9
+29,18,Vikramaditya,1
+29,165,Prerna Chakravarthi,2
+29,166,Tara,3
+29,167,Vedant,4
+29,168,Subbarao,5
+29,28,Anand Rajput,7
+29,144,Jagat Chakravarthi,8
+29,128,Madhuri,9
+29,94,Prerna's Uncle,10
+37,170,Shamsher Pathania (Patty),1
+37,160,Minal Rathore (Minni),2
+37,136,Rocky,3
+37,173,Sartaj Gill,4
+37,172,Basheer (Bash),5
+37,171,Saachi Gill,6
+37,155,Abhijit Rathore,7
+37,174,Azhar Akhtar,8
+38,10,Zooni Haskar,1
+38,175,Rajeshwari,2
+38,177,Khawar Ali,3
+38,176,Prime Minister,4
+38,178,Wasim Abbasi,5
+38,179,Burhan Vani,6
+39,182,Ashwat Rana,1
+39,110,Ambika,2
+39,183,Himanshu Shukla,3
+39,184,Dr. Viraf Wadiya,4
+39,185,Dr. Naresh Sinha,5
+39,186,Major Prem,6
+39,187,Puru Ranganathan,7
+39,188,Sushma Rana,8
+40,154,Major Vihan Shergill,1
+40,10,Pallavi Sharma,2
+40,62,Govind Bharadwaj,3
+40,181,Seerat Kaur,4
+40,109,Major Karan Kashyap,5
+40,180,Suhani Kashyap,6
+40,7,Senior ISI Officer,7
+40,106,General Arjun SI Officer,8
+41,189,Leo Das,1
+41,190,Sathya,2
+41,191,Harold Das,3
+41,3,Antony Das,4
+41,192,Elisa Das,5
+41,42,Shanmugam's Son,6
+41,161,Agent Vikram,7
+41,194,Napoleon,8
+41,193,Joshy Andrews,9
+42,161,"Karnan, Agent Vikram",1
+42,195,Santhanam,2
+42,196,Rolex,3
+42,197,Agent Amar,4
+42,198,Anbu,5
+42,199,Gayathri,6
+42,200,Shanthanam's 1st Wife,7
+42,201,Shanthanam's 2ns Wife,8
+42,202,Shanthanam's 3rd Wife,9
+43,83,Raju,1
+43,203,Ghanshyam (Shyam),2
+43,62,Baburao Apte,3
+43,88,Anuradha,4
+43,85,Bank Manager,5
+44,83,Raju,1
+44,203,Ghanshyam (Shyam),2
+44,62,Baburao Apte,3
+44,204,Anuradha,4
+44,205,Anjali,5
+44,87,Pappu,6
+44,207,Tiwai,7
+44,89,kachra Seth,8
+44,206,Munnabhai,9
+45,62,Radheshyam Tiwari,1
+45,205,Anjali,2
+45,208,Nandu,3
+45,2,Jitendar (Jeetu),4
+45,87,Raja,5
+45,138,Raddiwala (Teja),6
+45,209,Popat Seth,7
+45,89,Instector Waghmare,8
+46,83,Dr. Aditya Shrivastav,1
+46,87,Chhote Pandit,2
+46,211,Avni Chaturvedi,3
+46,212,Siddharth Chaturvedi,4
+46,62,Batukeshwar Upadhyay,5
+46,210,Radha,6
+46,85,Murari,7
+46,89,Badrinarayan,8
+46,213,Prof. Sharad,9
+47,126,Ruhan Randhawa,1
+47,114,Reet Thakur,2
+47,215,Trisha Rathore,3
+47,214,Rajeshwari,4
+47,216,Uday Thakur,5
+47,119,Kulwant Thakur,6
+47,218,Bade Pandit,7
+47,87,Chhote Pandit,8
+47,217,Panditain,9
+47,88,"Manjulika, Anjulika",10
+48,219,Aditya Kashyap,1
+48,220,Geet Dhillon,2
+48,84,Roop Kaur Dhillon,3
+48,8,Geet's Cousin,4
+48,221,Anshuman,5
+49,219,Raja Ratan Singh,1
+49,160,Padmavati,2
+49,1,Sultan Alauddin Khilji,3
+49,222,Mehrunissa,4
+49,223,Malik Kafur,5
+50,1,Bajirao,1
+50,160,Mastani,2
+50,224,Kashibai,3
+50,225,Radha Maa,4
+50,107,Chhatrapati Shahu Maharaj,5
+51,133,Shiva,1
+51,228,Isha,2
+51,146,Guru Arvind,3
+51,230,Anish,4
+51,226,Mohan Bhargav,5
+51,227,Junoon,6
+51,229,Raveena,7
+52,133,Kabir Thapar,1
+52,160,Naina Talwar,2
+52,233,Aditi,3
+52,232,Avi,4
+52,167,Taran,5
+52,231,Mohini,6
+52,234,Lara,7
+52,78,Vikram,8
+52,235,Bunny's Father,9
+80,236,Vicky,1
+80,237,Nikhil,2
+80,238,Loy,3
+80,239,Dhulo,4
+80,240,Pooja,5
+80,241,Nisha,6
+80,242,Dev,7
+80,243,Isha,8
+80,244,Naresh,9
+80,245,Vandana,10
+81,236,Manan,1
+81,237,Neel,2
+81,238,Chirag,3
+81,239,Viral,4
+81,241,Deepali,5
+81,247,Doctor,6
+81,246,Neel's Girlfriend,7

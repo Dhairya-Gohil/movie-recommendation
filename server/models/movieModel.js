@@ -295,13 +295,169 @@ async function getMovieById(movieId) {
         [movieId]
     );
 
+    const [castRows] = await db.execute(
+        `
+        select
+            a.actor_id,
+            a.actor_name,
+            a.profile_url,
+            mc.character_name,
+            mc.cast_order
+        from actors a
+        inner join movie_cast mc
+            on a.actor_id = mc.actor_id
+        where mc.movie_id = ?
+        order by mc.cast_order asc, a.actor_name asc
+        `,
+        [movieId]
+    );
+
     return {
         ...movieRows[0],
         genres: genreRows,
         languages: languageRows,
         directors: directorRows,
-        trailers: trailerRows
+        trailers: trailerRows,
+        cast: castRows
     };
+}
+
+async function getAllMoviesWithMetadata() {
+    const [movieRows] = await db.execute(`
+        select
+            movie_id,
+            title,
+            tagline,
+            release_date,
+            runtime,
+            description,
+            poster_url,
+            backdrop_url,
+            imdb_rating,
+            imdb_votes,
+            status
+        from movies
+        order by release_date desc
+    `);
+
+    if (movieRows.length === 0) {
+        return [];
+    }
+
+    const [genreRows] = await db.execute(`
+        select
+            mg.movie_id,
+            g.genre_id,
+            g.genre_name
+        from movie_genres mg
+        inner join genres g
+            on mg.genre_id = g.genre_id
+        order by mg.movie_id, g.genre_name
+    `);
+
+    const [languageRows] = await db.execute(`
+        select
+            ml.movie_id,
+            l.language_id,
+            l.language_name,
+            l.language_code,
+            ml.language_type
+        from movie_languages ml
+        inner join languages l
+            on ml.language_id = l.language_id
+        order by ml.movie_id, l.language_name
+    `);
+
+    const [directorRows] = await db.execute(`
+        select
+            md.movie_id,
+            d.director_id,
+            d.director_name
+        from movie_directors md
+        inner join directors d
+            on md.director_id = d.director_id
+        order by md.movie_id, d.director_name
+    `);
+
+    const [castRows] = await db.execute(`
+        select
+            mc.movie_id,
+            a.actor_id,
+            a.actor_name,
+            a.profile_url,
+            mc.character_name,
+            mc.cast_order
+        from movie_cast mc
+        inner join actors a
+            on mc.actor_id = a.actor_id
+        order by
+            mc.movie_id,
+            mc.cast_order asc,
+            a.actor_name asc
+    `);
+
+    const moviesMap = new Map();
+
+    for (const movie of movieRows) {
+        moviesMap.set(movie.movie_id, {
+            ...movie,
+            genres: [],
+            languages: [],
+            directors: [],
+            cast: []
+        });
+    }
+
+    for (const genre of genreRows) {
+        const movie = moviesMap.get(genre.movie_id);
+
+        if (movie) {
+            movie.genres.push({
+                genre_id: genre.genre_id,
+                genre_name: genre.genre_name
+            });
+        }
+    }
+
+    for (const language of languageRows) {
+        const movie = moviesMap.get(language.movie_id);
+
+        if (movie) {
+            movie.languages.push({
+                language_id: language.language_id,
+                language_name: language.language_name,
+                language_code: language.language_code,
+                language_type: language.language_type
+            });
+        }
+    }
+
+    for (const director of directorRows) {
+        const movie = moviesMap.get(director.movie_id);
+
+        if (movie) {
+            movie.directors.push({
+                director_id: director.director_id,
+                director_name: director.director_name
+            });
+        }
+    }
+
+    for (const actor of castRows) {
+        const movie = moviesMap.get(actor.movie_id);
+
+        if (movie) {
+            movie.cast.push({
+                actor_id: actor.actor_id,
+                actor_name: actor.actor_name,
+                profile_url: actor.profile_url,
+                character_name: actor.character_name,
+                cast_order: actor.cast_order
+            });
+        }
+    }
+
+    return Array.from(moviesMap.values());
 }
 
 module.exports = {
@@ -309,5 +465,6 @@ module.exports = {
     searchMovies,
     filterMovies,
     getMovieById,
-    getFilterOptions
+    getFilterOptions,
+    getAllMoviesWithMetadata
 };
